@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Primary Meta Tags for Search Engines -->
+  <title>About Us | Codecraft Technologies Ghana — Accra</title>
+  <meta name="title" content="About Us | Codecraft Technologies Ghana — Accra">
+  <meta name="description" content="Codecraft Technologies (CodeCraft Ghana) — registered digital engineering agency in Accra since 2019. 80+ projects, 100+ clients, ProDesk24, and 97% on-time delivery for SMEs across West Africa.">
+  <meta name="keywords" content="Codecraft Technologies, CodeCraft Ghana, software development Accra, web design Ghana, fintech solutions Accra, ProDesk24, digital agency Ghana">
+  <meta name="author" content="Codecraft Technologies">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://codecraftgh.com/about.html">
+
+  <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codecraftgh.com/about.html">
+  <meta property="og:title" content="About Codecraft Technologies | Digital Agency Accra">
+  <meta property="og:description" content="Premier registered digital engineering agency in Accra. Custom web, mobile, fintech, ProDesk24, and 80+ projects for 100+ clients across West Africa.">
+  <meta property="og:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Codecraft Technologies">
+  <meta property="og:locale" content="en_GH">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@codecraftgh">
+  <meta name="twitter:url" content="https://codecraftgh.com/about.html">
+  <meta name="twitter:title" content="About Codecraft Technologies | Digital Agency Accra">
+  <meta name="twitter:description" content="Premier registered digital engineering agency in Accra. Custom web, mobile, fintech, ProDesk24, and 80+ projects for 100+ clients across West Africa.">
+  <meta name="twitter:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta name="theme-color" content="#10b068">
+
+  <!-- Google-Structured Organization Schema Markup (Crucial for Brand Connection) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Codecraft Technologies",
+    "legalName": "Codecraft Technologies",
+    "alternateName": "CodeCraft Ghana",
+    "url": "https://codecraftgh.com",
+    "logo": "https://codecraftgh.com/assets/images/logo.png",
+    "description": "A premier, legally registered digital engineering agency in Accra, Ghana. Custom web applications, mobile apps, fintech integrations, ProDesk24, and digital marketing for SMEs across West Africa.",
+    "foundingDate": "2019",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "GM-108 Adam Street",
+      "addressLocality": "Accra",
+      "addressRegion": "Greater Accra",
+      "addressCountry": "GH"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+233-549-739-010",
+      "contactType": "sales",
+      "email": "hello@codecraftgh.com",
+      "availableLanguage": "en"
+    },
+    "sameAs": [
+      "https://facebook.com/codecraftgh",
+      "https://instagram.com/codecraftgh",
+      "https://linkedin.com/company/codecraftgh",
+      "https://twitter.com/codecraftgh"
+    ],
+    "numberOfEmployees": {"@type": "QuantitativeValue", "value": 7},
+    "areaServed": ["Ghana", "Nigeria", "West Africa", "United Kingdom", "United States"]
+  }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css?v=7">
+
+  <style>
+    .about-story { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
+    .story-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .story-block {
+      background: var(--offwhite); border-radius: var(--radius-lg);
+      padding: 2rem; border: 1px solid var(--gray-200);
+    }
+    .story-block.dark { background: var(--black); }
+    .story-block.dark h4 { color: var(--white); }
+    .story-block.dark p { color: var(--gray-400); }
+    .story-block h4 { font-size: 0.85rem; margin-bottom: 0.4rem; }
+    .story-block p { font-size: 0.8rem; color: var(--gray-600); line-height: 1.55; }
+    .story-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 700; color: var(--accent);
+      display: block; margin-bottom: 0.3rem;
+    }
+
+    /* Values */
+    .values { background: var(--offwhite); }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .value-card {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 2.5rem;
+    }
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .value-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .value-card p { font-size: 0.875rem; color: var(--gray-600); line-height: 1.65; }
+
+    /* Team */
+    .team { background: var(--white); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3.5rem;
+    }
+    .team-card { text-align: center; }
+    .team-avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--gray-200); margin: 0 auto 1rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: var(--gray-600);
+      border: 2px solid var(--gray-200);
+    }
+    .team-card h4 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .team-card p { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+    .team-card span { font-size: 0.78rem; color: var(--gray-400); display: block; margin-top: 0.3rem; line-height: 1.5; }
+
+    /* Timeline */
+    .timeline { background: var(--black); padding: 100px 5%; color: var(--white); }
+    .timeline .section-label { color: var(--accent); }
+    .timeline .section-title { color: var(--white); }
+    .timeline-list { margin-top: 4rem; position: relative; }
+    .timeline-list::before {
+      content: ''; position: absolute; left: 72px; top: 0; bottom: 0;
+      width: 1px; background: var(--gray-800);
+    }
+    .timeline-item {
+      display: flex; gap: 3rem; align-items: flex-start;
+      padding: 0 0 3rem; position: relative;
+    }
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: var(--accent);
+      min-width: 48px; text-align: right; padding-top: 0.1rem;
+    }
+    .timeline-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+      margin-top: 0.35rem; position: relative; z-index: 1;
+    }
+    .timeline-content h4 { color: var(--white); font-size: 1rem; margin-bottom: 0.4rem; }
+    .timeline-content p { color: var(--gray-400); font-size: 0.875rem; line-height: 1.65; }
+
+    /* Mission */
+    .mission { background: var(--offwhite); }
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3.5rem; }
+    .mission-block { padding: 3rem; border-radius: var(--radius-lg); }
+    .mission-block.m1 { background: var(--black); color: var(--white); }
+    .mission-block.m2 { background: var(--white); border: 1px solid var(--gray-200); }
+    .mission-block h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+    .mission-block.m1 h3 { color: var(--white); }
+    .mission-block p { font-size: 0.925rem; line-height: 1.75; }
+    .mission-block.m1 p { color: var(--gray-400); }
+    .mission-block.m2 p { color: var(--gray-600); }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .mission-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-visual { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Code<span>Craft</span> Technologies</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub">
+      <a href="services.html">Services <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu submenu-wide">
+        <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="services.html#software">Custom software<small>From GH₵5,200</small></a></li>
+        <li><a href="services.html#ai">AI<small>Quoted from the brief</small></a></li>
+        <li><a href="services.html#automation">Automation<small>From GH₵1,000</small></a></li>
+        <li><a href="services.html#marketing">Digital marketing<small>From GH₵400</small></a></li>
+        <li><a href="services.html#branding">Branding<small>From GH₵150</small></a></li>
+        <li><a href="services.html#consulting">IT consulting<small>GH₵300 / hour</small></a></li>
+        <li><a href="services.html#packages">Packages<small>From GH₵5,250</small></a></li>
+        <li><a href="services.html#maintenance">Maintenance<small>From GH₵250 / month</small></a></li>
+        <li><a href="calculator.html">Price calculator<small>Build a starting figure</small></a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="products.html">Products <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="products.html#prodesk24">ProDesk24</a></li>
+        <li><a href="products.html#zone">Zone</a></li>
+        <li><a href="products.html#launch">Launch package</a></li>
+        <li><a href="products.html#codeboost">Codeboost</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="portfolio.html">Portfolio <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="portfolio.html">All projects</a></li>
+        <li><a href="portfolio.html?filter=web">Websites</a></li>
+        <li><a href="portfolio.html?filter=ecommerce">Online stores</a></li>
+        <li><a href="portfolio.html?filter=marketing">Marketing</a></li>
+        <li><a href="portfolio.html?filter=branding">Branding</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="industries.html">Industries <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu sectors">
+                <li><a href="industries.html">All 20 sectors</a></li>
+        <li><a href="industries.html#agri">Agri-business</a></li>
+        <li><a href="industries.html#automotive">Automotive and transport</a></li>
+        <li><a href="industries.html#beverages">Beverages</a></li>
+        <li><a href="industries.html#consultancy">Business promotion and consultancy</a></li>
+        <li><a href="industries.html#wood">Wood processing</a></li>
+        <li><a href="industries.html#construction">Construction</a></li>
+        <li><a href="industries.html#cosmetics">Cosmetics and toiletries</a></li>
+        <li><a href="industries.html#electricals">Electricals and electronics</a></li>
+        <li><a href="industries.html#energy">Energy</a></li>
+        <li><a href="industries.html#environment">Environment and sanitation</a></li>
+        <li><a href="industries.html#export">Export</a></li>
+        <li><a href="industries.html#finance">Financial services</a></li>
+        <li><a href="industries.html#food">Food</a></li>
+        <li><a href="industries.html#garments">Garment, leather and textiles</a></li>
+        <li><a href="industries.html#hospitality">Hospitality and tourism</a></li>
+        <li><a href="industries.html#ict">ICT</a></li>
+        <li><a href="industries.html#metal">Metal and building products</a></li>
+        <li><a href="industries.html#oilgas">Oil and gas services</a></li>
+        <li><a href="industries.html#printing">Printing, packaging and stationery</a></li>
+        <li><a href="industries.html#rubber">Rubber and plastic</a></li></ul>
+    </li>
+    <li class="has-sub">
+      <a href="about.html" class="active">About <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="about.html#story">Our story</a></li>
+        <li><a href="about.html#mission">Mission and vision</a></li>
+        <li><a href="about.html#values">What we stand for</a></li>
+        <li><a href="about.html#team">The team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="resources.html">Resources <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="resources.html?tab=faq">FAQs</a></li>
+        <li><a href="resources.html?tab=booking">Book a call</a></li>
+        <li><a href="resources.html?tab=payment">Pay an invoice</a></li>
+        <li><a href="resources.html?tab=terms">Terms</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-header media" style="--header-image:url('assets/images/founder-tablet.jpg')">
+  <span class="section-label">About Us</span>
+  <h1>About Codecraft<br>Technologies</h1>
+  <p>A premier, legally registered digital engineering agency in Accra — bridging creative design and robust technical execution for SMEs across West Africa.</p>
+</div>
+
+<!-- STORY -->
+<section class="about-story" id="story">
+  <div class="about-grid">
+    <div>
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">Engineering Growth<br>Across West Africa</h2>
+      <div class="thin-line"></div>
+      <p style="color:var(--gray-600);line-height:1.8;margin-bottom:1.2rem;">Founded in 2019, <strong>Codecraft Technologies</strong> (operating locally and widely known as <strong>CodeCraft Ghana</strong>) is a premier, legally registered full-service digital engineering agency based in Accra, Ghana. We bridge the gap between creative design and robust technical execution to help ambitious small and medium enterprises (SMEs) scale across West Africa.</p>
+      <p style="color:var(--gray-600);line-height:1.8;margin-bottom:1.2rem;">As a forward-thinking software firm, Codecraft Technologies specializes in delivering custom web design, secure mobile applications, localized fintech integrations, and results-driven digital marketing strategies. We don't just build software; we engineer tools that solve real-world operational challenges. This includes our proprietary cloud platform, <strong>ProDesk24</strong>, an all-in-one CRM and business management ecosystem tailored specifically for the African startup ecosystem to streamline invoicing, task tracking, and customer relations.</p>
+      <p style="color:var(--gray-600);line-height:1.8;margin-bottom:2rem;">From our central office at GM-108 Adam Street in Accra, CodeCraft Ghana has successfully deployed over <strong>80 digital projects</strong> for a diverse portfolio of more than <strong>100 clients</strong>—including prominent organizations like the <strong>Association of Ghana Industries (AGI)</strong>. With a certified <strong>97% on-time project delivery rate</strong>, our team combines global development standards with deep regional market expertise to deliver software that truly moves the needle for your business.</p>
+      <a href="contact.html" class="btn btn-primary">Work With Us →</a>
+    </div>
+    <div class="story-visual">
+      <div class="story-block dark">
+        <span class="story-num">2019</span>
+        <h4>Founded</h4>
+        <p>Legally registered in Accra as a full-service digital engineering agency.</p>
+      </div>
+      <div class="story-block">
+        <span class="story-num">100+</span>
+        <h4>Clients Served</h4>
+        <p>From startups to enterprises, including the Association of Ghana Industries (AGI).</p>
+      </div>
+      <div class="story-block">
+        <span class="story-num">80+</span>
+        <h4>Projects Deployed</h4>
+        <p>Web, mobile, fintech, and marketing solutions delivered across West Africa.</p>
+      </div>
+      <div class="story-block dark">
+        <span class="story-num">97%</span>
+        <h4>On-Time Delivery</h4>
+        <p>Certified project delivery rate with global standards and local expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="mission" id="mission">
+  <span class="section-label">Purpose & Direction</span>
+  <h2 class="section-title">What Drives Us</h2>
+  <div class="mission-grid">
+    <div class="mission-block m1">
+      <h3>Our Mission</h3>
+      <p>To bridge creative design and robust technical execution for ambitious SMEs — delivering custom web applications, secure mobile apps, localized fintech integrations, and results-driven digital marketing that solve real operational challenges. We engineer software that helps West African businesses scale with confidence.</p>
+    </div>
+    <div class="mission-block m2">
+      <h3>Our Vision</h3>
+      <p style="color:var(--gray-600)">To be the most trusted digital engineering partner for African enterprises — known for global development standards, deep regional market expertise, and platforms like ProDesk24 that power the continent's startup ecosystem. We envision every ambitious SME in Ghana and West Africa equipped with world-class digital tools built for their market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values" id="values">
+  <span class="section-label">Our Values</span>
+  <h2 class="section-title">What We Stand For</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <span class="value-icon"><i data-lucide="settings" aria-hidden="true"></i></span>
+      <h3>Engineering Excellence</h3>
+      <p>We don't just build software — we engineer solutions. Every web platform, mobile app, and fintech integration is built to global standards with the reliability SMEs depend on.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon"><i data-lucide="target" aria-hidden="true"></i></span>
+      <h3>Results-Driven</h3>
+      <p>From digital marketing campaigns to business management tools, we focus on measurable outcomes — growth, efficiency, and operational challenges solved, not just deliverables shipped.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon"><i data-lucide="globe" aria-hidden="true"></i></span>
+      <h3>Built for West Africa</h3>
+      <p>We combine global development practices with deep regional expertise — understanding local payment rails, startup realities, and the African business landscape from our Accra headquarters.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon"><i data-lucide="timer" aria-hidden="true"></i></span>
+      <h3>Reliable Delivery</h3>
+      <p>With a certified 97% on-time project delivery rate, we treat deadlines as commitments. Our clients — from startups to institutions like AGI — trust us to deliver when it matters.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon"><i data-lucide="lightbulb" aria-hidden="true"></i></span>
+      <h3>Product Innovation</h3>
+      <p>Beyond client projects, we build proprietary tools like ProDesk24 — an all-in-one CRM and business management ecosystem designed specifically for the African startup ecosystem.</p>
+    </div>
+    <div class="value-card">
+      <span class="value-icon"><i data-lucide="handshake" aria-hidden="true"></i></span>
+      <h3>SME Partnership</h3>
+      <p>We partner with ambitious small and medium enterprises as a full-service digital engineering agency — growing alongside our clients across Ghana and West Africa since 2019.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <span class="section-label">Our Team</span>
+  <h2 class="section-title">The People Behind<br>the Work</h2>
+  <p class="section-subtitle">A lean, certified team of digital engineers, designers, and strategists based at GM-108 Adam Street, Accra — delivering for 100+ clients across West Africa.</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar team-avatar--icon">CC</div>
+      <h4>CEO & Founder</h4>
+      <p>Leadership</p>
+      <span>Strategy, vision, and client partnerships. Leading Codecraft Technologies since its founding in 2019.</span>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar team-avatar--icon"><i data-lucide="monitor" aria-hidden="true"></i></div>
+      <h4>Lead Software Engineer</h4>
+      <p>Digital Engineering</p>
+      <span>Full-stack development, fintech integrations, and technical architecture across web and mobile projects.</span>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar team-avatar--icon"><i data-lucide="palette" aria-hidden="true"></i></div>
+      <h4>Creative Director</h4>
+      <p>Design & UX</p>
+      <span>Custom web design, UI/UX, and brand identity — bridging creative vision with technical execution.</span>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar team-avatar--icon"><i data-lucide="megaphone" aria-hidden="true"></i></div>
+      <h4>Digital Marketing Lead</h4>
+      <p>Growth & Strategy</p>
+      <span>Results-driven digital marketing, SEO, and campaigns that help SMEs scale across Ghana and the region.</span>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:3rem;">
+    <p style="color:var(--gray-600);margin-bottom:1.5rem;">We're growing our engineering and product team. If you're passionate about building software for African SMEs —</p>
+    <a href="contact.html" class="btn btn-outline">View Open Roles →</a>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<div class="timeline">
+  <span class="section-label">Our Journey</span>
+  <h2 class="section-title">How We Got Here</h2>
+  <div class="timeline-list">
+    <div class="timeline-item">
+      <div class="timeline-year">2019</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>Codecraft Technologies Founded</h4>
+        <p>Codecraft Technologies (CodeCraft Ghana) is legally registered in Accra as a full-service digital engineering agency — bridging creative design and technical execution for Ghanaian SMEs.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2020</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>Full-Service Capabilities</h4>
+        <p>We expand into secure mobile applications, localized fintech integrations, and results-driven digital marketing — growing beyond web development into a complete software firm.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2021</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>Enterprise Partnership — AGI Ghana</h4>
+        <p>We partner with the Association of Ghana Industries (AGI), delivering a national-scale digital platform — establishing Codecraft Technologies as a trusted enterprise engineering partner.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2022</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>Fintech & ProDesk24 Launch</h4>
+        <p>We enter localized fintech integrations and launch ProDesk24 — our proprietary cloud CRM and business management ecosystem built for the African startup ecosystem.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>80+ Projects Milestone</h4>
+        <p>We surpass 80 deployed digital projects and 100+ clients served — combining global development standards with deep regional expertise from our Accra headquarters.</p>
+      </div>
+    </div>
+    <div class="timeline-item" style="padding-bottom:0">
+      <div class="timeline-year">2025+</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>Scaling Across West Africa</h4>
+        <p>With a certified 97% on-time delivery rate, 100+ clients, and 80+ projects completed, Codecraft Technologies expands its digital engineering services across Nigeria and the broader West African market.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section style="background:var(--accent);padding:80px 5%;text-align:center;">
+  <h2 style="color:var(--white);margin-bottom:1rem;">Ready to Scale Your Business?</h2>
+  <p style="color:rgba(255,255,255,0.75);max-width:520px;margin:0 auto 2rem;">Whether you need a custom web application, fintech integration, or a platform like ProDesk24 — our Accra team is ready to engineer software that moves the needle.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="contact.html" class="btn btn-primary">Get in Touch →</a>
+    <a href="portfolio.html" class="btn btn-outline">See Our Work</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><h3>Code<span>Craft</span> Technologies</h3><p>Codecraft Technologies — registered digital engineering agency in Accra since 2019. Custom web, mobile, fintech, and ProDesk24 for SMEs across West Africa.</p></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Web Development</a></li><li><a href="services.html">Digital Marketing</a></li><li><a href="services.html">Fintech</a></li><li><a href="services.html">App Development</a></li></ul></div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="https://prodesk24.com/" target="_blank">ProDesk24</a></li><li><a href="https://zone.codecraftgh.com/" target="_blank">Zone</a></li><li><a href="https://codeboost.shop/" target="_blank">Codeboost</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Codecraft Technologies. All rights reserved. Operating locally as CodeCraft Ghana. <a href="privacy-policy.html">Privacy Policy</a> | <a href="resources.html?tab=terms">Terms of Service</a></span><span>GM-108 Adam Street, Accra, Ghana</span></div>
+</footer>
+
+<script>
+  function toggleNav() { document.getElementById('navbar').classList.toggle('open'); }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.value-card, .team-card, .story-block, .mission-block, .timeline-item').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(20px)';
+    el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+  <script src="motion.js"></script>
+<script src="icons.js"></script>
+</body>
+</html>

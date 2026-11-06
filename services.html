@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Primary Meta Tags for Search Engines -->
+  <title>Services & Prices | Codecraft Technologies Ghana</title>
+  <meta name="title" content="Services & Prices | Codecraft Technologies Ghana">
+  <meta name="description" content="CodeCraft Technologies in Accra: websites, online stores, custom software, ProDesk24, marketing, branding, and IT support. Public starting prices in Ghana cedis.">
+  <meta name="keywords" content="Codecraft Technologies, CodeCraft Ghana, software development Accra, web design Ghana, fintech solutions Accra, ProDesk24, digital agency Ghana">
+  <meta name="author" content="Codecraft Technologies">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://codecraftgh.com/services.html">
+
+  <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codecraftgh.com/services.html">
+  <meta property="og:title" content="Services & Prices | Codecraft Technologies Ghana">
+  <meta property="og:description" content="Websites from GH₵2,000, business sites at GH₵4,500, and custom systems quoted in Ghana cedis. Prices exclude taxes.">
+  <meta property="og:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Codecraft Technologies">
+  <meta property="og:locale" content="en_GH">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@codecraftgh">
+  <meta name="twitter:url" content="https://codecraftgh.com/services.html">
+  <meta name="twitter:title" content="Services & Prices | Codecraft Technologies Ghana">
+  <meta name="twitter:description" content="Websites from GH₵2,000, business sites at GH₵4,500, and custom systems quoted in Ghana cedis. Prices exclude taxes.">
+  <meta name="twitter:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta name="theme-color" content="#10b068">
+
+  <!-- Google-Structured Organization Schema Markup (Crucial for Brand Connection) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Codecraft Technologies",
+    "legalName": "Codecraft Technologies",
+    "alternateName": "CodeCraft Ghana",
+    "url": "https://codecraftgh.com",
+    "logo": "https://codecraftgh.com/assets/images/logo.png",
+    "description": "A premier digital agency and software development company based in Accra, Ghana, specializing in custom web applications, mobile apps, and fintech solutions.",
+    "foundingDate": "2019",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "GM-108 Adam Street",
+      "addressLocality": "Accra",
+      "addressRegion": "Greater Accra",
+      "addressCountry": "GH"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+233-549-739-010",
+      "contactType": "sales",
+      "email": "hello@codecraftgh.com",
+      "availableLanguage": "en"
+    },
+    "sameAs": [
+      "https://facebook.com/codecraftgh",
+      "https://instagram.com/codecraftgh",
+      "https://linkedin.com/company/codecraftgh",
+      "https://twitter.com/codecraftgh"
+    ],
+    "numberOfEmployees": {"@type": "QuantitativeValue", "value": 7},
+    "areaServed": ["Ghana", "Nigeria", "West Africa", "United Kingdom", "United States"]
+  }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css?v=7">
+
+  <style>
+    .services-intro { background: var(--offwhite); padding: 80px 5%; }
+    .services-intro-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+    }
+    .intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .intro-stat {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 1.8rem;
+    }
+    .intro-stat h3 {
+      font-size: 2.2rem; color: var(--black); letter-spacing: -0.03em;
+    }
+    .intro-stat h3 span { color: var(--accent); }
+    .intro-stat p { font-size: 0.8rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+
+    .services-list { background: var(--white); }
+    .service-category { margin-bottom: 5rem; }
+    .category-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 2.5rem;
+    }
+    .service-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .svc-card {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .svc-card:hover::before { transform: scaleX(1); }
+    .svc-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .svc-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .svc-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .svc-card p { font-size: 0.86rem; color: var(--gray-600); line-height: 1.65; margin-bottom: 1.2rem; }
+    .svc-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.3rem;
+    }
+
+    /* Pricing */
+    .pricing { background: var(--offwhite); }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .price-card {
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg); padding: 2.5rem;
+      transition: all var(--transition);
+    }
+    .price-card.popular {
+      background: var(--black); color: var(--white);
+      border-color: var(--black);
+      transform: scale(1.02);
+    }
+    .price-card.popular p, .price-card.popular .price-feature { color: var(--gray-400); }
+    .popular-badge {
+      display: inline-block;
+      background: var(--white); color: var(--accent-dark);
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.8rem;
+      border-radius: 100px; margin-bottom: 1rem;
+    }
+    .price-tier { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.5rem; }
+    .price-card.popular .price-tier { color: var(--gray-600); }
+    .price-amount { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; margin: 0.5rem 0; line-height: 1.15; }
+    .price-amount span { display: block; font-size: 0.82rem; font-weight: 500; font-family: 'DM Sans', sans-serif; color: var(--gray-400); margin-top: 0.45rem; line-height: 1.45; letter-spacing: 0; text-transform: none; }
+    .price-card.popular .price-amount span { color: rgba(255,255,255,0.72); }
+    .price-card p { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 1.5rem; }
+    .price-features { list-style: none; margin-bottom: 2rem; }
+    .price-feature {
+      font-size: 0.84rem; color: var(--gray-600);
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .price-card.popular .price-feature { border-color: var(--gray-800); }
+    .price-feature::before { content: ''; }
+
+    /* Retainer */
+    .retainer { background: var(--black); color: var(--white); }
+    .retainer .section-label { color: var(--accent); }
+    .retainer .section-title { color: var(--white); }
+    .retainer .section-subtitle { color: var(--gray-400); }
+    .retainer-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .pricing-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .price-table-wrap { overflow-x: auto; margin-top: 1.2rem; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); background: var(--white); }
+    .price-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .price-table th {
+      text-align: left; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gray-400); padding: 0.85rem 1rem; border-bottom: 1px solid var(--gray-200); background: var(--offwhite);
+    }
+    .price-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--gray-100); vertical-align: top; color: var(--gray-600); line-height: 1.5; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table td.amt { font-weight: 700; white-space: nowrap; color: var(--black); }
+    .schedule { margin-top: 3.5rem; }
+    .schedule h3 { font-size: 1.35rem; margin: 0 0 0.35rem; }
+    .schedule .section-label { margin-bottom: 0.6rem; }
+    .fine { font-size: 0.84rem; color: var(--gray-600); line-height: 1.65; margin-top: 0.8rem; }
+    .terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem; }
+    .term-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 1.4rem 1.5rem; }
+    .term-card h4 { font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .term-card p { font-size: 0.84rem; color: var(--gray-600); line-height: 1.6; }
+    .retainer-card {
+      border: 1px solid var(--gray-800); border-radius: var(--radius-lg);
+      padding: 2rem; transition: all var(--transition);
+    }
+    .retainer-card:hover { border-color: var(--accent); }
+    .retainer-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700; color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .retainer-price span { font-size: 1rem; font-family: 'DM Sans', sans-serif; color: var(--gray-400); }
+    .retainer-card h4 { color: var(--white); font-size: 1rem; margin-bottom: 0.5rem; }
+    .retainer-card p { color: var(--gray-400); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; }
+
+    @media (max-width: 1000px) {
+      .pricing-grid, .pricing-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+      .price-card.popular { transform: scale(1); }
+      .retainer-grid { grid-template-columns: 1fr 1fr; }
+      .terms-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .services-intro-grid { grid-template-columns: 1fr; }
+      .service-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Code<span>Craft</span> Technologies</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub">
+      <a href="services.html" class="active">Services <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu submenu-wide">
+        <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="services.html#software">Custom software<small>From GH₵5,200</small></a></li>
+        <li><a href="services.html#ai">AI<small>Quoted from the brief</small></a></li>
+        <li><a href="services.html#automation">Automation<small>From GH₵1,000</small></a></li>
+        <li><a href="services.html#marketing">Digital marketing<small>From GH₵400</small></a></li>
+        <li><a href="services.html#branding">Branding<small>From GH₵150</small></a></li>
+        <li><a href="services.html#consulting">IT consulting<small>GH₵300 / hour</small></a></li>
+        <li><a href="services.html#packages">Packages<small>From GH₵5,250</small></a></li>
+        <li><a href="services.html#maintenance">Maintenance<small>From GH₵250 / month</small></a></li>
+        <li><a href="calculator.html">Price calculator<small>Build a starting figure</small></a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="products.html">Products <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="products.html#prodesk24">ProDesk24</a></li>
+        <li><a href="products.html#zone">Zone</a></li>
+        <li><a href="products.html#launch">Launch package</a></li>
+        <li><a href="products.html#codeboost">Codeboost</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="portfolio.html">Portfolio <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="portfolio.html">All projects</a></li>
+        <li><a href="portfolio.html?filter=web">Websites</a></li>
+        <li><a href="portfolio.html?filter=ecommerce">Online stores</a></li>
+        <li><a href="portfolio.html?filter=marketing">Marketing</a></li>
+        <li><a href="portfolio.html?filter=branding">Branding</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="industries.html">Industries <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu sectors">
+                <li><a href="industries.html">All 20 sectors</a></li>
+        <li><a href="industries.html#agri">Agri-business</a></li>
+        <li><a href="industries.html#automotive">Automotive and transport</a></li>
+        <li><a href="industries.html#beverages">Beverages</a></li>
+        <li><a href="industries.html#consultancy">Business promotion and consultancy</a></li>
+        <li><a href="industries.html#wood">Wood processing</a></li>
+        <li><a href="industries.html#construction">Construction</a></li>
+        <li><a href="industries.html#cosmetics">Cosmetics and toiletries</a></li>
+        <li><a href="industries.html#electricals">Electricals and electronics</a></li>
+        <li><a href="industries.html#energy">Energy</a></li>
+        <li><a href="industries.html#environment">Environment and sanitation</a></li>
+        <li><a href="industries.html#export">Export</a></li>
+        <li><a href="industries.html#finance">Financial services</a></li>
+        <li><a href="industries.html#food">Food</a></li>
+        <li><a href="industries.html#garments">Garment, leather and textiles</a></li>
+        <li><a href="industries.html#hospitality">Hospitality and tourism</a></li>
+        <li><a href="industries.html#ict">ICT</a></li>
+        <li><a href="industries.html#metal">Metal and building products</a></li>
+        <li><a href="industries.html#oilgas">Oil and gas services</a></li>
+        <li><a href="industries.html#printing">Printing, packaging and stationery</a></li>
+        <li><a href="industries.html#rubber">Rubber and plastic</a></li></ul>
+    </li>
+    <li class="has-sub">
+      <a href="about.html">About <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="about.html#story">Our story</a></li>
+        <li><a href="about.html#mission">Mission and vision</a></li>
+        <li><a href="about.html#values">What we stand for</a></li>
+        <li><a href="about.html#team">The team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="resources.html">Resources <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="resources.html?tab=faq">FAQs</a></li>
+        <li><a href="resources.html?tab=booking">Book a call</a></li>
+        <li><a href="resources.html?tab=payment">Pay an invoice</a></li>
+        <li><a href="resources.html?tab=terms">Terms</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-header media" style="--header-image:url('assets/images/hero-studio.jpg')">
+  <span class="section-label">Our Services</span>
+  <h1>Services and starting<br>prices, in cedis</h1>
+  <p>Websites, online stores, custom systems, AI, ProDesk24, marketing, branding, and IT support. Published figures are starting prices in Ghana cedis and exclude taxes. AI work is quoted from the brief.</p>
+  <div class="header-actions">
+    <a href="contact.html" class="btn btn-accent">Get a quote</a>
+    <a href="calculator.html" class="btn btn-ghost">Estimate a project</a>
+  </div>
+</div>
+
+<section class="services-intro">
+  <div class="services-intro-grid">
+    <div>
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">Expertise You<br>Can Rely On</h2>
+      <div class="thin-line"></div>
+      <p style="color:var(--gray-600);line-height:1.75;margin-bottom:1.5rem;">Since 2019, we've helped over 100 businesses across Ghana and beyond build, grow, and scale their digital presence. Our multidisciplinary team combines technical depth with creative thinking to deliver solutions that actually move the needle.</p>
+      <a href="contact.html" class="btn btn-primary">Start a Conversation →</a>
+    </div>
+    <div class="intro-stats">
+      <div class="intro-stat"><h3>100<span>+</span></h3><p>Clients Served</p></div>
+      <div class="intro-stat"><h3>80<span>+</span></h3><p>Projects Delivered</p></div>
+      <div class="intro-stat"><h3>95<span>%</span></h3><p>Client Satisfaction</p></div>
+      <div class="intro-stat"><h3>7<span>yr</span></h3><p>In the Industry</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services-list" id="services">
+  <div class="service-category" style="margin-bottom:0">
+    <div class="category-label">What we deliver</div>
+    <div class="service-row">
+      <a class="svc-card" href="#websites" style="text-decoration:none;color:inherit;">
+        <span class="svc-icon"><i data-lucide="globe" aria-hidden="true"></i></span>
+        <h3>Websites and e-commerce</h3>
+        <p>Starter sites and stores from GH₵2,000. Business websites at GH₵4,500. Premium stores at GH₵8,500. Domain, SSL, and hosting for the first year are included.</p>
+        <div class="svc-link">See website prices →</div>
+      </a>
+      <a class="svc-card" href="#software" style="text-decoration:none;color:inherit;">
+        <span class="svc-icon"><i data-lucide="layout-dashboard" aria-hidden="true"></i></span>
+        <h3>Custom software and systems</h3>
+        <p>POS, inventory, CRM, school, booking, and other business systems. Configuration from GH₵5,200. Mobile apps from GH₵25,000.</p>
+        <div class="svc-link">See system prices →</div>
+      </a>
+      <a class="svc-card" href="#automation" style="text-decoration:none;color:inherit;">
+        <span class="svc-icon"><i data-lucide="workflow" aria-hidden="true"></i></span>
+        <h3>Automation and ProDesk24</h3>
+        <p>Setup, training, workflow automation, dashboards, and data migration. ProDesk24 subscriptions are billed on their own plan.</p>
+        <div class="svc-link">See automation prices →</div>
+      </a>
+      <a class="svc-card" href="#marketing" style="text-decoration:none;color:inherit;">
+        <span class="svc-icon"><i data-lucide="megaphone" aria-hidden="true"></i></span>
+        <h3>Digital marketing</h3>
+        <p>Social media, content, Meta ads, and SEO. Management fees are separate from advertising spend, which you fund directly.</p>
+        <div class="svc-link">See marketing prices →</div>
+      </a>
+      <a class="svc-card" href="#branding" style="text-decoration:none;color:inherit;">
+        <span class="svc-icon"><i data-lucide="palette" aria-hidden="true"></i></span>
+        <h3>Branding and design</h3>
+        <p>Logos, full identity, stationery, and social templates. Printing and photography are quoted separately.</p>
+        <div class="svc-link">See design prices →</div>
+      </a>
+      <a class="svc-card" href="#consulting" style="text-decoration:none;color:inherit;">
+        <span class="svc-icon"><i data-lucide="headset" aria-hidden="true"></i></span>
+        <h3>IT consulting and office IT</h3>
+        <p>Technical consultation at GH₵300 per hour, training, small-office networks, and on-site support. Hosting and maintenance sit alongside this.</p>
+        <div class="svc-link">See consulting prices →</div>
+      </a>
+      <a class="svc-card" href="#ai" style="text-decoration:none;color:inherit;">
+        <span class="svc-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+        <h3>AI</h3>
+        <p>Assistants for your website or WhatsApp, sorting for incoming work, and search across your own content. Priced from the brief, not a flat package.</p>
+        <div class="svc-link">See how AI is scoped →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="packages">
+  <span class="section-label">Client packages</span>
+  <h2 class="section-title">Three ways to start</h2>
+  <p class="section-subtitle">These bundles use the list prices below. A written quotation confirms what is included before any work starts. <a href="calculator.html" style="color:var(--accent);font-weight:600;">Build an estimate</a> or <a href="contact.html" style="color:var(--accent);font-weight:600;">request a quotation</a>.</p>
+  <div class="pricing-grid cols-3">
+    <div class="price-card">
+      <div class="price-tier">Launch</div>
+      <div class="price-amount">GH₵5,250 <span>from</span></div>
+      <p>For a new or small business that needs a professional presence online.</p>
+      <ul class="price-features">
+        <li class="price-feature">Business Website</li>
+        <li class="price-feature">Starter logo and brand kit</li>
+        <li class="price-feature">Social media setup and templates</li>
+        <li class="price-feature">Domain and hosting for year one</li>
+        <li class="price-feature">Optional ProDesk24 onboarding</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Request this package</a>
+    </div>
+    <div class="price-card popular">
+      <span class="popular-badge">Growth</span>
+      <div class="price-tier">Grow</div>
+      <div class="price-amount">GH₵3,400 <span>setup, then from GH₵2,500 / month</span></div>
+      <p>For a business that wants more enquiries. Minimum three months. Advertising spend is separate.</p>
+      <ul class="price-features">
+        <li class="price-feature">Strategy, Meta Ads setup, and conversion tracking</li>
+        <li class="price-feature">Google Business Profile</li>
+        <li class="price-feature">Monthly ads and social media management</li>
+        <li class="price-feature">Monthly performance report</li>
+        <li class="price-feature">Technical support while the retainer runs</li>
+      </ul>
+      <a href="contact.html" class="btn btn-accent" style="width:100%;justify-content:center;">Request this package</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tier">Automate</div>
+      <div class="price-amount">GH₵5,200 <span>implementation, then support from GH₵500 / month</span></div>
+      <p>For a business that wants POS, inventory, and accounting running in one place. ProDesk24 subscription is extra.</p>
+      <ul class="price-features">
+        <li class="price-feature">ProDesk24 or equivalent configuration</li>
+        <li class="price-feature">Onboarding and team training</li>
+        <li class="price-feature">Workflow and reporting improvements</li>
+        <li class="price-feature">Ongoing support</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Request this package</a>
+    </div>
+  </div>
+
+  <div class="schedule" id="websites">
+    <span class="section-label">Websites and e-commerce</span>
+    <h3>Standard website packages</h3>
+    <p class="fine" style="margin-top:0;">Fixed project fees. Each package includes a free .com domain, SSL, and one year of hosting. Those items stay in the price if you decline them. Renewals are GH₵400–800 a year. The domain is registered in your name. The clock starts when the deposit and your content are both in.</p>
+  </div>
+  <div class="pricing-grid" style="margin-top:1.5rem;">
+    <div class="price-card">
+      <div class="price-tier">Starter Website</div>
+      <div class="price-amount">GH₵2,000</div>
+      <p>7–10 days. 30-day defect period and 2 revision rounds.</p>
+      <ul class="price-features">
+        <li class="price-feature">Up to 5 pages, mobile-responsive</li>
+        <li class="price-feature">Contact form and WhatsApp button</li>
+        <li class="price-feature">Maps, social links, and basic SEO</li>
+        <li class="price-feature">1 business email and a tutorial</li>
+      </ul>
+      <a href="calculator.html" class="btn btn-outline" style="width:100%;justify-content:center;">Estimate this</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tier">Starter Online Store</div>
+      <div class="price-amount">GH₵2,000</div>
+      <p>10–14 days. 30-day defect period and 2 revision rounds.</p>
+      <ul class="price-features">
+        <li class="price-feature">Up to 20 products (extra products GH₵5 each)</li>
+        <li class="price-feature">Cart and checkout: MoMo, Telecel Cash, and card</li>
+        <li class="price-feature">WhatsApp ordering and an order dashboard</li>
+        <li class="price-feature">1 business email, basic SEO, and a tutorial</li>
+      </ul>
+      <a href="calculator.html" class="btn btn-outline" style="width:100%;justify-content:center;">Estimate this</a>
+    </div>
+    <div class="price-card popular">
+      <span class="popular-badge">Most chosen</span>
+      <div class="price-tier">Business Website</div>
+      <div class="price-amount">GH₵4,500</div>
+      <p>2–3 weeks. 3 months of included support and 3 revision rounds.</p>
+      <ul class="price-features">
+        <li class="price-feature">Everything in Starter Website</li>
+        <li class="price-feature">Up to 10 custom-designed pages</li>
+        <li class="price-feature">Blog or news, gallery or portfolio</li>
+        <li class="price-feature">Booking or enquiry system</li>
+        <li class="price-feature">Google Analytics, Search Console, and 3 business emails</li>
+      </ul>
+      <a href="calculator.html" class="btn btn-accent" style="width:100%;justify-content:center;">Estimate this</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tier">Premium E-Commerce</div>
+      <div class="price-amount">GH₵8,500</div>
+      <p>4–6 weeks. 6 months of included support.</p>
+      <ul class="price-features">
+        <li class="price-feature">Everything in Starter Online Store</li>
+        <li class="price-feature">Unlimited products, customer accounts, and order tracking</li>
+        <li class="price-feature">Inventory, discount codes, email and SMS notifications</li>
+        <li class="price-feature">Advanced SEO, speed, security, and a full admin dashboard</li>
+        <li class="price-feature">Team training</li>
+      </ul>
+      <a href="calculator.html" class="btn btn-outline" style="width:100%;justify-content:center;">Estimate this</a>
+    </div>
+  </div>
+
+  <div class="schedule">
+    <h3>Other website work</h3>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Service</th><th>Starting price</th><th>What to expect</th></tr></thead>
+        <tbody>
+          <tr><td>Landing page</td><td class="amt">GH₵2,000</td><td>One conversion-focused page, with a form and tracking.</td></tr>
+          <tr><td>Personal or portfolio website</td><td class="amt">GH₵2,500</td><td>Gallery, CV or portfolio sections, and a contact form.</td></tr>
+          <tr><td>Website redesign</td><td class="amt">From GH₵2,500</td><td>Priced on pages, complexity, and content migration.</td></tr>
+          <tr><td>Booking or appointment website</td><td class="amt">GH₵6,000</td><td>Online scheduling, confirmations, and reminders.</td></tr>
+          <tr><td>Professional corporate website</td><td class="amt">GH₵7,000</td><td>Custom design, about 15 pages, CMS, and SEO foundations.</td></tr>
+          <tr><td>Membership or directory website</td><td class="amt">From GH₵8,000</td><td>User accounts, listings, search, and filters.</td></tr>
+          <tr><td>Custom web portal</td><td class="amt">From GH₵10,000</td><td>Logins, roles, and workflows. Discovery is required.</td></tr>
+          <tr><td>Advanced e-commerce platform</td><td class="amt">From GH₵12,000</td><td>Multi-vendor, custom checkout, or ERP and POS integration.</td></tr>
+          <tr><td>Institutional or custom-theme website</td><td class="amt">From GH₵15,000</td><td>25+ pages, a theme built from scratch, structured content, and a formal handover. Quoted after discovery.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="schedule">
+    <h3>Website add-ons</h3>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Add-on</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Extra website page</td><td class="amt">GH₵200 each</td></tr>
+          <tr><td>Extra products beyond the package limit</td><td class="amt">GH₵5 each</td></tr>
+          <tr><td>Content writing and copywriting</td><td class="amt">From GH₵300 per page</td></tr>
+          <tr><td>Starter logo and brand kit, with a website package</td><td class="amt">From GH₵500</td></tr>
+          <tr><td>Social media graphics pack</td><td class="amt">From GH₵600</td></tr>
+          <tr><td>Business email setup, on its own</td><td class="amt">GH₵300</td></tr>
+          <tr><td>Payment gateway or API integration not already in the package</td><td class="amt">From GH₵2,000</td></tr>
+          <tr><td>Website security and performance audit</td><td class="amt">GH₵750</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">What moves a website price: number of pages, how custom the design is, integrations such as MoMo, SMS, Paystack, or accounting, who writes the content, data migration, languages, user roles, and how fast you need it. Payment-provider fees are paid by the business and are not part of the build price.</p>
+  </div>
+
+  <div class="schedule" id="software">
+    <span class="section-label">Custom software</span>
+    <h3>Systems and applications</h3>
+    <p class="fine" style="margin-top:0;">Quoted after discovery. Every custom system includes discovery, a working demo before go-live, team training, and a user guide, plus three months of post-launch support. Hosting for custom systems is billed separately, at cost. Optional yearly support and updates are about 15% of the build price and cover defect fixes, security updates, and minor improvements. New features are quoted on their own.</p>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>System</th><th>Starting price</th><th>Timeline</th></tr></thead>
+        <tbody>
+          <tr><td>POS system implementation on an existing platform</td><td class="amt">From GH₵5,200</td><td>Quoted</td></tr>
+          <tr><td>POS and inventory system, custom build</td><td class="amt">GH₵7,000 – GH₵25,000</td><td>3–8 weeks</td></tr>
+          <tr><td>Inventory management, multi-location</td><td class="amt">From GH₵10,000</td><td>Quoted</td></tr>
+          <tr><td>Other custom systems and portals (clinic, hotel, delivery, fleet, and similar)</td><td class="amt">From GH₵10,000</td><td>Quoted</td></tr>
+          <tr><td>CRM system</td><td class="amt">GH₵8,000 – GH₵30,000</td><td>4–8 weeks</td></tr>
+          <tr><td>Basic business management system</td><td class="amt">From GH₵12,000</td><td>Quoted</td></tr>
+          <tr><td>HR and payroll system</td><td class="amt">From GH₵12,000</td><td>Quoted</td></tr>
+          <tr><td>Booking and reservation system</td><td class="amt">From GH₵12,000</td><td>Quoted</td></tr>
+          <tr><td>School management system</td><td class="amt">From GH₵15,000</td><td>Quoted</td></tr>
+          <tr><td>Custom business web application</td><td class="amt">From GH₵15,000</td><td>Quoted</td></tr>
+          <tr><td>Manufacturing and production system</td><td class="amt">GH₵15,000 – GH₵60,000</td><td>8–16 weeks</td></tr>
+          <tr><td>Advanced enterprise software</td><td class="amt">From GH₵25,000</td><td>Quoted</td></tr>
+          <tr><td>Mobile application</td><td class="amt">From GH₵25,000</td><td>Quoted</td></tr>
+          <tr><td>Business management (ERP) suite</td><td class="amt">From GH₵40,000</td><td>3–6 months</td></tr>
+          <tr><td>API integration</td><td class="amt">From GH₵2,000</td><td>Quoted</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Systems quoted below GH₵15,000 include a free discovery session of up to two hours. Systems of GH₵15,000 and above, or any complex system, start with paid technical discovery from GH₵1,000. That fee is credited in full if you proceed within 30 days. Projects that take payments, sensitive data, or several integrations are scoped with security, testing, and documentation included. Systems that process personal data are scoped with the Data Protection Act, 2012 (Act 843) in mind. Price within a range moves with users, branches, integrations, existing data, custom reports, and whether a mobile app is included.</p>
+  </div>
+
+  <div class="schedule" id="automation">
+    <span class="section-label">Automation</span>
+    <h3>Business automation and ProDesk24</h3>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Service</th><th>Starting price</th></tr></thead>
+        <tbody>
+          <tr><td>ProDesk24 setup, onboarding, and team training</td><td class="amt">From GH₵1,000</td></tr>
+          <tr><td>ProDesk24 subscription</td><td class="amt">On the ProDesk24 plan</td></tr>
+          <tr><td>POS, inventory, or accounting configuration on an existing platform</td><td class="amt">From GH₵5,200</td></tr>
+          <tr><td>Workflow automation and process improvement, per workflow</td><td class="amt">From GH₵2,500</td></tr>
+          <tr><td>Reporting dashboard</td><td class="amt">From GH₵3,000</td></tr>
+          <tr><td>Data import and migration</td><td class="amt">From GH₵500, by volume</td></tr>
+          <tr><td>API integration</td><td class="amt">From GH₵2,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="schedule" id="ai">
+    <span class="section-label">AI</span>
+    <h3>AI for everyday business work</h3>
+    <p class="fine" style="margin-top:0;">These are built around your own pages, products, and replies. The quotation follows the channels, the amount of content, and where a person still has to approve the answer. It is not a published package price.</p>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>What we can set up</th><th>How it is priced</th></tr></thead>
+        <tbody>
+          <tr><td>Website or WhatsApp assistant that answers from your content</td><td class="amt">Quoted</td></tr>
+          <tr><td>Sorting and drafting for enquiries, invoices, and support</td><td class="amt">Quoted</td></tr>
+          <tr><td>Search across documents, products, or member records</td><td class="amt">Quoted</td></tr>
+          <tr><td>A review step so a person confirms anything that has to be right</td><td class="amt">Included in the scope</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine"><a href="contact.html">Tell us the job you want taken off the team</a> and we will come back with a written scope.</p>
+  </div>
+
+  <div class="schedule" id="marketing">
+    <span class="section-label">Marketing</span>
+    <h3>Digital marketing and growth</h3>
+    <p class="fine" style="margin-top:0;">Setup fees plus a monthly retainer where the work is ongoing. Advertising budgets are paid by you and are never part of the management fee. Every content package states how many posts, designs, videos, and reports you receive. Retainers run for a minimum of three months, are billed monthly in advance, and include a performance report.</p>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Service</th><th>Starting price</th></tr></thead>
+        <tbody>
+          <tr><td>Google Business Profile setup and local visibility</td><td class="amt">GH₵400</td></tr>
+          <tr><td>Social media account setup</td><td class="amt">GH₵500</td></tr>
+          <tr><td>Meta Ads campaign setup</td><td class="amt">GH₵750</td></tr>
+          <tr><td>Conversion tracking and reporting setup</td><td class="amt">GH₵750</td></tr>
+          <tr><td>Standard content creation package</td><td class="amt">GH₵1,000</td></tr>
+          <tr><td>Marketing audit</td><td class="amt">GH₵1,000</td></tr>
+          <tr><td>Ads management</td><td class="amt">GH₵1,000 / month</td></tr>
+          <tr><td>Digital marketing strategy</td><td class="amt">GH₵1,500</td></tr>
+          <tr><td>SEO setup and optimisation</td><td class="amt">GH₵1,500</td></tr>
+          <tr><td>Social media management</td><td class="amt">GH₵1,500 / month</td></tr>
+          <tr><td>Monthly SEO management</td><td class="amt">GH₵1,500 / month</td></tr>
+          <tr><td>Monthly content package</td><td class="amt">GH₵2,000</td></tr>
+          <tr><td>Lead-generation landing page</td><td class="amt">From GH₵2,500</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="schedule" id="branding">
+    <span class="section-label">Branding</span>
+    <h3>Branding and graphic design</h3>
+    <p class="fine" style="margin-top:0;">Fixed packages with clear deliverables and revision limits. Printing, photography, stock assets, and other production costs are separate.</p>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Service</th><th>Starting price</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Flyer or promotional design</td><td class="amt">GH₵150</td><td>A single design.</td></tr>
+          <tr><td>Roll-up banner design</td><td class="amt">GH₵400</td><td>Print-ready file.</td></tr>
+          <tr><td>Presentation design</td><td class="amt">GH₵500</td><td></td></tr>
+          <tr><td>Starter logo and brand kit</td><td class="amt">From GH₵500</td><td>Add-on to a website package only. Limited concepts and revisions.</td></tr>
+          <tr><td>Social media design bundle</td><td class="amt">GH₵600</td><td>Branded templates and starter graphics.</td></tr>
+          <tr><td>Business profile design</td><td class="amt">GH₵800</td><td>You supply the content.</td></tr>
+          <tr><td>Corporate stationery package</td><td class="amt">GH₵800</td><td>Cards, letterhead, envelope, and invoice templates.</td></tr>
+          <tr><td>Logo design</td><td class="amt">GH₵1,000</td><td>Stand-alone logo.</td></tr>
+          <tr><td>Company profile writing and design</td><td class="amt">GH₵1,500</td><td>Includes copywriting.</td></tr>
+          <tr><td>Complete brand identity</td><td class="amt">GH₵2,000</td><td>Logo, colours, typography, and usage guidelines.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="schedule" id="consulting">
+    <span class="section-label">Consulting and IT</span>
+    <h3>IT consulting, training, and office IT</h3>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Service</th><th>Starting price</th></tr></thead>
+        <tbody>
+          <tr><td>Workstation configuration</td><td class="amt">GH₵200 per workstation</td></tr>
+          <tr><td>Technical consultation</td><td class="amt">GH₵300 / hour</td></tr>
+          <tr><td>Business email setup</td><td class="amt">GH₵300</td></tr>
+          <tr><td>On-site technical support</td><td class="amt">From GH₵400 per visit, plus transport</td></tr>
+          <tr><td>System documentation and user guides</td><td class="amt">From GH₵500</td></tr>
+          <tr><td>Technical discovery and specification</td><td class="amt">From GH₵1,000</td></tr>
+          <tr><td>Staff training</td><td class="amt">GH₵1,000 half-day, GH₵1,800 full day</td></tr>
+          <tr><td>Small office network setup</td><td class="amt">From GH₵1,500, after a site survey</td></tr>
+          <tr><td>Business software assessment</td><td class="amt">From GH₵1,500</td></tr>
+          <tr><td>SME digital transformation consulting</td><td class="amt">GH₵2,000 / day (7 hours)</td></tr>
+          <tr><td>Hardware and equipment procurement</td><td class="amt">At cost, plus a 10% handling fee, paid in advance</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">An initial discovery call is free for up to 30 minutes, and remote wherever possible. On-site visits are from GH₵400 plus transport, confirmed before anyone travels. There are no unplanned site visits.</p>
+  </div>
+
+  <div class="schedule" id="commercial">
+    <span class="section-label">Before you approve a quote</span>
+    <h3>Payment, scope, and handover</h3>
+    <div class="terms-grid">
+      <div class="term-card">
+        <h4>Currency and tax</h4>
+        <p>Quotations are in Ghana cedis. List prices exclude taxes unless the quotation says otherwise. Third-party services billed in another currency are quoted at the rate on the quotation date.</p>
+      </div>
+      <div class="term-card">
+        <h4>How you pay</h4>
+        <p>Up to GH₵5,000: 70% deposit, 30% before handover. GH₵5,001–15,000: 60%, then 30% at a milestone, then 10% before handover. GH₵15,001–50,000: 50%, 30%, and 20%. Above GH₵50,000, milestones are written into the contract. Nothing starts until the deposit has cleared, and handover waits until the agreed balance is paid.</p>
+      </div>
+      <div class="term-card">
+        <h4>Retainers and renewals</h4>
+        <p>Marketing, maintenance, and support plans are billed monthly in advance and are due by the 5th. Domain and hosting renewals are billed at least 30 days before expiry. Standard package quotations are valid for 30 days. Custom work and retainers are valid for 14 days.</p>
+      </div>
+      <div class="term-card">
+        <h4>Scope and changes</h4>
+        <p>The quotation states what is included. Starter sites include two revision rounds. A Business Website includes three. Extra pages, features, integrations, or revision rounds are written up and approved before that work starts. If you need delivery in less than half the usual time, a rush premium of 25–50% applies, and only if we have capacity.</p>
+      </div>
+      <div class="term-card">
+        <h4>After go-live</h4>
+        <p>Every project has 30 days of defect fixes for the agreed scope. Included support is 30 days for Starter Website and Starter Online Store, 3 months for a Business Website and for custom systems, and 6 months for Premium E-Commerce. That support covers defects, security updates, how-to guidance, and minor content edits of up to 2 hours a month. It does not cover new features.</p>
+      </div>
+      <div class="term-card">
+        <h4>Ownership</h4>
+        <p>On full payment you own the final content, branding, and data, and you receive a licence to use the website or system. CodeCraft keeps its existing tools and reusable components. A footer credit is standard unless we agree otherwise in writing. Source-code ownership can be transferred on request and is quoted per project. Credentials and source files are handed over after the agreed payment is received.</p>
+      </div>
+    </div>
+    <p class="fine">If you cancel after work has started, the deposit covers reserved time and work already done, and committed third-party costs are still payable. A project with no reply for 30 days is paused. After 60 days it may be closed. Send content within 7 days of the deposit, and feedback within 5 business days of each review. Your delay moves the delivery date by the same amount.</p>
+  </div>
+</section>
+
+<section class="retainer" id="maintenance">
+  <span class="section-label">Website maintenance</span>
+  <h2 class="section-title">Keep the site<br>looked after</h2>
+  <p class="section-subtitle">Every plan includes backups, core and plugin updates, uptime and security monitoring, and minor content changes up to the hours below. Extra hours are quoted before that work starts. Yearly support for a custom system is about 15% of the original build price.</p>
+  <div class="retainer-grid">
+    <div class="retainer-card">
+      <div class="retainer-price">GH₵250 <span>/ month, from</span></div>
+      <h4>Lite</h4>
+      <p>1 hour included. Response within 2 business days. For starter websites and stores.</p>
+      <a href="contact.html" class="btn btn-outline" style="color:var(--white);border-color:var(--gray-600);">Start Lite</a>
+    </div>
+    <div class="retainer-card">
+      <div class="retainer-price">GH₵500 <span>/ month</span></div>
+      <h4>Basic</h4>
+      <p>2 hours included. Response within 1 business day. For business websites.</p>
+      <a href="contact.html" class="btn btn-outline" style="color:var(--white);border-color:var(--gray-600);">Start Basic</a>
+    </div>
+    <div class="retainer-card">
+      <div class="retainer-price">GH₵800 <span>/ month</span></div>
+      <h4>Standard</h4>
+      <p>4 hours included. Response within 8 business hours. For growing businesses and stores.</p>
+      <a href="contact.html" class="btn btn-accent">Start Standard</a>
+    </div>
+    <div class="retainer-card">
+      <div class="retainer-price">GH₵1,500 <span>/ month</span></div>
+      <h4>Advanced</h4>
+      <p>8 hours included. Response within 4 business hours. For e-commerce and critical sites.</p>
+      <a href="contact.html" class="btn btn-outline" style="color:var(--white);border-color:var(--gray-600);">Start Advanced</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--accent);padding:80px 5%;text-align:center;">
+  <h2 style="color:var(--white);font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem;">Not Sure What You Need?</h2>
+  <p style="color:rgba(255,255,255,0.75);max-width:520px;margin:0 auto 2rem;">The first call is free, up to 30 minutes. Tell us what you need and we will recommend a package or a scoped quotation.</p>
+  <a href="contact.html" class="btn btn-primary">Book Free Consultation →</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>Code<span>Craft</span> Ghana</h3>
+      <p>Empowering businesses and individuals with innovative digital solutions since 2019.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html#websites">Websites</a></li>
+      <li><a href="services.html#software">Custom software</a></li>
+      <li><a href="services.html#marketing">Digital marketing</a></li>
+      <li><a href="services.html#packages">Packages and prices</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Products</h4><ul>
+      <li><a href="https://prodesk24.com/" target="_blank">ProDesk24</a></li>
+      <li><a href="https://zone.codecraftgh.com/" target="_blank">Zone</a></li>
+      <li><a href="services.html#packages">Launch package</a></li>
+      <li><a href="https://codeboost.shop/" target="_blank">Codeboost</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Codecraft Technologies. All rights reserved. Operating locally as CodeCraft Ghana. <a href="privacy-policy.html">Privacy Policy</a> | <a href="resources.html?tab=terms">Terms of Service</a></span>
+    <span>hello@codecraftgh.com · +233 549 739 010</span>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() { document.getElementById('navbar').classList.toggle('open'); }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.svc-card, .price-card, .retainer-card, .intro-stat').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(20px)';
+    el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+  <script src="motion.js"></script>
+<script src="icons.js"></script>
+</body>
+</html>

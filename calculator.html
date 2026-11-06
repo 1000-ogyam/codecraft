@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Primary Meta Tags for Search Engines -->
+  <title>Pricing Calculator | Instant Project Estimate — Codecraft Technologies</title>
+  <meta name="title" content="Pricing Calculator | Instant Project Estimate — Codecraft Technologies">
+  <meta name="description" content="Estimate a CodeCraft project in Ghana cedis. Websites from GH₵2,000, business sites at GH₵4,500, stores, software, marketing, and branding. Starting prices, before tax.">
+  <meta name="keywords" content="Codecraft Technologies, CodeCraft Ghana, software development Accra, web design Ghana, fintech solutions Accra, ProDesk24, digital agency Ghana">
+  <meta name="author" content="Codecraft Technologies">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://codecraftgh.com/calculator.html">
+
+  <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codecraftgh.com/calculator.html">
+  <meta property="og:title" content="Project Pricing Calculator | Codecraft Technologies Ghana">
+  <meta property="og:description" content="Instant estimate for web, fintech, and software projects in under 2 minutes. No commitment required.">
+  <meta property="og:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Codecraft Technologies">
+  <meta property="og:locale" content="en_GH">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@codecraftgh">
+  <meta name="twitter:url" content="https://codecraftgh.com/calculator.html">
+  <meta name="twitter:title" content="Project Pricing Calculator | Codecraft Technologies Ghana">
+  <meta name="twitter:description" content="Starting prices in Ghana cedis for websites, stores, software, marketing, and branding. A written quotation confirms the final figure.">
+  <meta name="twitter:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta name="theme-color" content="#10b068">
+
+  <!-- Google-Structured Organization Schema Markup (Crucial for Brand Connection) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Codecraft Technologies",
+    "legalName": "Codecraft Technologies",
+    "alternateName": "CodeCraft Ghana",
+    "url": "https://codecraftgh.com",
+    "logo": "https://codecraftgh.com/assets/images/logo.png",
+    "description": "A premier digital agency and software development company based in Accra, Ghana, specializing in custom web applications, mobile apps, and fintech solutions.",
+    "foundingDate": "2019",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "GM-108 Adam Street",
+      "addressLocality": "Accra",
+      "addressRegion": "Greater Accra",
+      "addressCountry": "GH"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+233-549-739-010",
+      "contactType": "sales",
+      "email": "hello@codecraftgh.com",
+      "availableLanguage": "en"
+    },
+    "sameAs": [
+      "https://facebook.com/codecraftgh",
+      "https://instagram.com/codecraftgh",
+      "https://linkedin.com/company/codecraftgh",
+      "https://twitter.com/codecraftgh"
+    ],
+    "numberOfEmployees": {"@type": "QuantitativeValue", "value": 7},
+    "areaServed": ["Ghana", "Nigeria", "West Africa", "United Kingdom", "United States"]
+  }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css?v=7">
+
+  <style>
+    /* ── PAGE LAYOUT ── */
+    .calc-page {
+      min-height: 100vh;
+      background: var(--offwhite);
+      padding: 100px 0 80px;
+    }
+
+    .calc-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    /* ── HEADER ── */
+    .calc-header {
+      text-align: center;
+      padding: 60px 0 50px;
+    }
+    .calc-header .section-label { justify-content: center; display: flex; }
+    .calc-header h1 {
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+    .calc-header h1 em { font-style: normal; color: var(--accent); }
+    .calc-header p {
+      color: var(--gray-600);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── PROGRESS ── */
+    .calc-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 3rem;
+    }
+    .prog-step {
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+      position: relative;
+    }
+    .prog-dot {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--gray-200);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--gray-400);
+      transition: all 0.4s ease;
+      position: relative; z-index: 1;
+    }
+    .prog-step.active .prog-dot {
+      background: var(--accent); border-color: var(--accent);
+      color: var(--white); box-shadow: 0 0 0 4px rgba(16,176,104,0.15);
+    }
+    .prog-step.done .prog-dot {
+      background: var(--accent-dark); border-color: var(--accent-dark);
+      color: var(--white);
+    }
+    .prog-step.done .prog-dot::after { content: ''; font-size: 0.8rem; }
+    .prog-step.done .prog-dot span { display: none; }
+    .prog-label {
+      font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--gray-400); white-space: nowrap;
+    }
+    .prog-step.active .prog-label, .prog-step.done .prog-label { color: var(--accent-dark); }
+    .prog-line {
+      flex: 1; height: 2px; background: var(--gray-200);
+      margin: 0 8px; margin-bottom: 22px;
+      transition: background 0.4s ease;
+      min-width: 40px; max-width: 100px;
+    }
+    .prog-line.done { background: var(--accent); }
+
+    /* ── CALC CARD ── */
+    .calc-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .calc-body {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      min-height: 520px;
+    }
+
+    /* ── LEFT: QUESTIONS ── */
+    .calc-questions {
+      padding: 3rem;
+      border-right: 1px solid var(--gray-200);
+    }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(12px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .step-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700;
+      margin-bottom: 0.4rem; color: var(--black);
+      line-height: 1.25;
+    }
+    .step-sub {
+      font-size: 0.875rem; color: var(--gray-600);
+      margin-bottom: 2rem; line-height: 1.6;
+    }
+
+    /* Option grid */
+    .opts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .opts-grid.single-col { grid-template-columns: 1fr; }
+    .opt-card {
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      background: var(--white);
+      position: relative;
+      user-select: none;
+    }
+    .opt-card:hover { border-color: var(--accent); background: rgba(16,176,104,0.03); }
+    .opt-card.selected {
+      border-color: var(--accent);
+      background: rgba(16,176,104,0.06);
+    }
+    .opt-card.selected::after {
+      content: '';
+      position: absolute; top: 0.6rem; right: 0.75rem;
+      width: 18px; height: 18px;
+      background: var(--accent); color: var(--white);
+      border-radius: 50%; font-size: 0.6rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .opt-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+    .opt-name { font-size: 0.875rem; font-weight: 700; color: var(--black); margin-bottom: 0.15rem; }
+    .opt-desc { font-size: 0.75rem; color: var(--gray-400); line-height: 1.45; }
+    .opt-price {
+      font-size: 0.72rem; font-weight: 700;
+      color: var(--accent-dark); margin-top: 0.3rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* Addons */
+    .addons-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+    }
+    .addon-card {
+      border: 1.5px solid var(--gray-200); border-radius: 8px;
+      padding: 0.9rem 1rem; cursor: pointer;
+      transition: all 0.25s ease; background: var(--white);
+      display: flex; align-items: center; gap: 0.7rem;
+      position: relative;
+    }
+    .addon-card:hover { border-color: var(--accent); }
+    .addon-card.selected { border-color: var(--accent); background: rgba(16,176,104,0.05); }
+    .addon-card.selected::after {
+      content: '';
+      position: absolute; top: 0.45rem; right: 0.6rem;
+      width: 16px; height: 16px;
+      background: var(--accent); color: var(--white);
+      border-radius: 50%; font-size: 0.55rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .addon-icon { font-size: 1.2rem; }
+    .addon-name { font-size: 0.8rem; font-weight: 600; color: var(--black); }
+    .addon-price { font-size: 0.7rem; color: var(--accent-dark); font-weight: 600; margin-top: 0.1rem; }
+
+    /* Timeline slider */
+    .timeline-opts { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .tl-opt {
+      padding: 0.55rem 1.1rem;
+      border: 1.5px solid var(--gray-200); border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600; cursor: pointer;
+      background: var(--white); transition: all 0.25s ease;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .tl-opt:hover { border-color: var(--accent); }
+    .tl-opt.selected { background: var(--black); color: var(--white); border-color: var(--black); }
+    .tl-note { font-size: 0.78rem; color: var(--gray-400); margin-top: 1rem; line-height: 1.6; padding: 0.8rem 1rem; background: var(--offwhite); border-radius: 6px; border-left: 3px solid var(--accent); }
+
+    /* Nav buttons */
+    .calc-nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 3rem;
+      border-top: 1px solid var(--gray-100);
+      background: var(--white);
+    }
+    .calc-nav-back {
+      background: none; border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius); padding: 0.65rem 1.4rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600;
+      color: var(--gray-600); cursor: pointer; transition: all 0.25s ease;
+    }
+    .calc-nav-back:hover { border-color: var(--black); color: var(--black); }
+    .calc-nav-back:disabled { opacity: 0.3; cursor: not-allowed; }
+    .calc-nav-next {
+      background: var(--black); color: var(--white);
+      border: none; border-radius: var(--radius);
+      padding: 0.75rem 2rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem; font-weight: 700; cursor: pointer;
+      transition: all 0.25s ease; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .calc-nav-next:hover { background: var(--accent); }
+    .calc-nav-next:disabled { opacity: 0.4; cursor: not-allowed; }
+    .step-counter { font-size: 0.78rem; color: var(--gray-400); font-weight: 500; }
+
+    /* ── RIGHT: LIVE ESTIMATE ── */
+    .calc-sidebar {
+      padding: 2.5rem 2rem;
+      background: var(--black);
+      display: flex; flex-direction: column;
+    }
+    .sidebar-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    }
+    .estimate-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--white);
+      line-height: 1; margin-bottom: 0.4rem;
+      transition: all 0.4s ease;
+    }
+    .estimate-range {
+      font-size: 0.78rem; color: var(--gray-400); margin-bottom: 2rem;
+    }
+
+    .estimate-breakdown { flex: 1; }
+    .breakdown-title {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gray-600);
+      margin-bottom: 0.8rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--gray-800);
+    }
+    .breakdown-item {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .breakdown-item:last-child { border-bottom: none; }
+    .bi-name { font-size: 0.8rem; color: var(--gray-400); line-height: 1.4; flex: 1; padding-right: 0.5rem; }
+    .bi-name strong { color: var(--white); display: block; font-size: 0.82rem; }
+    .bi-price { font-size: 0.82rem; font-weight: 700; color: var(--white); white-space: nowrap; }
+    .bi-free { font-size: 0.75rem; font-weight: 600; color: var(--accent); }
+
+    .estimate-total-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 0 0;
+      margin-top: 0.5rem;
+      border-top: 1px solid var(--gray-800);
+    }
+    .et-label { font-size: 0.78rem; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.08em; }
+    .et-amount { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+    .sidebar-note {
+      margin-top: 1.5rem; padding: 1rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 6px;
+      font-size: 0.75rem; color: var(--gray-400); line-height: 1.6;
+    }
+    .sidebar-note strong { color: var(--white); }
+
+    .empty-state {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 2rem 0;
+    }
+    .empty-icon { font-size: 2.5rem; margin-bottom: 0.8rem; opacity: 0.4; }
+    .empty-state p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.6; }
+
+    /* ── RESULT PANEL ── */
+    .result-panel {
+      display: none; padding: 3.5rem;
+      animation: fadeIn 0.4s ease;
+    }
+    .result-panel.active { display: block; }
+
+    .result-header { text-align: center; margin-bottom: 3rem; }
+    .result-header .check-ring {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(16,176,104,0.1); border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin: 0 auto 1.2rem;
+    }
+    .result-header h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .result-header p { color: var(--gray-600); font-size: 0.925rem; }
+
+    .result-estimate-box {
+      background: var(--black); border-radius: 10px;
+      padding: 2rem 2.5rem; margin-bottom: 2.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
+    }
+    .reb-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-400); margin-bottom: 0.3rem; }
+    .reb-amount { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--white); }
+    .reb-note { font-size: 0.8rem; color: var(--gray-400); margin-top: 0.3rem; line-height: 1.5; }
+    .reb-timeline { border-left: 1px solid var(--gray-800); padding-left: 2rem; }
+    .reb-timeline .reb-amount { font-size: 1.5rem; color: var(--accent); }
+
+    .result-breakdown {
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--gray-200); border-radius: 8px; overflow: hidden;
+    }
+    .rb-header {
+      padding: 0.9rem 1.5rem; background: var(--offwhite);
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--gray-600);
+      display: grid; grid-template-columns: 1fr auto;
+    }
+    .rb-item {
+      display: grid; grid-template-columns: 1fr auto;
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--gray-100);
+      font-size: 0.875rem; align-items: center;
+    }
+    .rb-item-name { font-weight: 600; color: var(--black); }
+    .rb-item-sub { font-size: 0.75rem; color: var(--gray-400); margin-top: 0.1rem; }
+    .rb-item-price { font-weight: 700; color: var(--black); font-size: 0.875rem; }
+    .rb-total {
+      display: grid; grid-template-columns: 1fr auto;
+      padding: 1.2rem 1.5rem;
+      background: var(--black); color: var(--white);
+      font-weight: 700;
+    }
+    .rb-total span:last-child { color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+
+    .result-actions {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .result-note {
+      background: rgba(16,176,104,0.07); border: 1px solid var(--accent-light);
+      border-radius: 8px; padding: 1rem 1.2rem;
+      font-size: 0.8rem; color: var(--gray-600); line-height: 1.65; text-align: center;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .calc-body { grid-template-columns: 1fr; }
+      .calc-sidebar { display: none; }
+      .result-estimate-box { grid-template-columns: 1fr; }
+      .reb-timeline { border-left: none; padding-left: 0; border-top: 1px solid var(--gray-800); padding-top: 1.5rem; }
+      .result-actions { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .calc-questions { padding: 2rem; }
+      .calc-nav { padding: 1.2rem 2rem; }
+      .opts-grid { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .result-panel { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Code<span>Craft</span> Technologies</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub">
+      <a href="services.html">Services <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu submenu-wide">
+        <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="services.html#software">Custom software<small>From GH₵5,200</small></a></li>
+        <li><a href="services.html#ai">AI<small>Quoted from the brief</small></a></li>
+        <li><a href="services.html#automation">Automation<small>From GH₵1,000</small></a></li>
+        <li><a href="services.html#marketing">Digital marketing<small>From GH₵400</small></a></li>
+        <li><a href="services.html#branding">Branding<small>From GH₵150</small></a></li>
+        <li><a href="services.html#consulting">IT consulting<small>GH₵300 / hour</small></a></li>
+        <li><a href="services.html#packages">Packages<small>From GH₵5,250</small></a></li>
+        <li><a href="services.html#maintenance">Maintenance<small>From GH₵250 / month</small></a></li>
+        <li><a href="calculator.html">Price calculator<small>Build a starting figure</small></a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="products.html">Products <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="products.html#prodesk24">ProDesk24</a></li>
+        <li><a href="products.html#zone">Zone</a></li>
+        <li><a href="products.html#launch">Launch package</a></li>
+        <li><a href="products.html#codeboost">Codeboost</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="portfolio.html">Portfolio <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="portfolio.html">All projects</a></li>
+        <li><a href="portfolio.html?filter=web">Websites</a></li>
+        <li><a href="portfolio.html?filter=ecommerce">Online stores</a></li>
+        <li><a href="portfolio.html?filter=marketing">Marketing</a></li>
+        <li><a href="portfolio.html?filter=branding">Branding</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="industries.html">Industries <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu sectors">
+                <li><a href="industries.html">All 20 sectors</a></li>
+        <li><a href="industries.html#agri">Agri-business</a></li>
+        <li><a href="industries.html#automotive">Automotive and transport</a></li>
+        <li><a href="industries.html#beverages">Beverages</a></li>
+        <li><a href="industries.html#consultancy">Business promotion and consultancy</a></li>
+        <li><a href="industries.html#wood">Wood processing</a></li>
+        <li><a href="industries.html#construction">Construction</a></li>
+        <li><a href="industries.html#cosmetics">Cosmetics and toiletries</a></li>
+        <li><a href="industries.html#electricals">Electricals and electronics</a></li>
+        <li><a href="industries.html#energy">Energy</a></li>
+        <li><a href="industries.html#environment">Environment and sanitation</a></li>
+        <li><a href="industries.html#export">Export</a></li>
+        <li><a href="industries.html#finance">Financial services</a></li>
+        <li><a href="industries.html#food">Food</a></li>
+        <li><a href="industries.html#garments">Garment, leather and textiles</a></li>
+        <li><a href="industries.html#hospitality">Hospitality and tourism</a></li>
+        <li><a href="industries.html#ict">ICT</a></li>
+        <li><a href="industries.html#metal">Metal and building products</a></li>
+        <li><a href="industries.html#oilgas">Oil and gas services</a></li>
+        <li><a href="industries.html#printing">Printing, packaging and stationery</a></li>
+        <li><a href="industries.html#rubber">Rubber and plastic</a></li></ul>
+    </li>
+    <li class="has-sub">
+      <a href="about.html">About <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="about.html#story">Our story</a></li>
+        <li><a href="about.html#mission">Mission and vision</a></li>
+        <li><a href="about.html#values">What we stand for</a></li>
+        <li><a href="about.html#team">The team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="resources.html">Resources <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="resources.html?tab=faq">FAQs</a></li>
+        <li><a href="resources.html?tab=booking">Book a call</a></li>
+        <li><a href="resources.html?tab=payment">Pay an invoice</a></li>
+        <li><a href="resources.html?tab=terms">Terms</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="calc-page">
+  <div class="calc-container">
+
+    <!-- Header -->
+    <div class="calc-header">
+      <span class="section-label">Free Estimate</span>
+      <h1>What Will Your<br>Project <em>Actually</em> Cost?</h1>
+      <p>Pick a service and see a starting price in Ghana cedis. The figure excludes tax. A written quotation is the price you approve.</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="calc-progress" id="progressBar">
+      <div class="prog-step active" id="ps-1">
+        <div class="prog-dot"><span>1</span></div>
+        <div class="prog-label">Service</div>
+      </div>
+      <div class="prog-line" id="pl-1"></div>
+      <div class="prog-step" id="ps-2">
+        <div class="prog-dot"><span>2</span></div>
+        <div class="prog-label">Scope</div>
+      </div>
+      <div class="prog-line" id="pl-2"></div>
+      <div class="prog-step" id="ps-3">
+        <div class="prog-dot"><span>3</span></div>
+        <div class="prog-label">Add-ons</div>
+      </div>
+      <div class="prog-line" id="pl-3"></div>
+      <div class="prog-step" id="ps-4">
+        <div class="prog-dot"><span>4</span></div>
+        <div class="prog-label">Support</div>
+      </div>
+      <div class="prog-line" id="pl-4"></div>
+      <div class="prog-step" id="ps-5">
+        <div class="prog-dot"><span>5</span></div>
+        <div class="prog-label">Timeline</div>
+      </div>
+    </div>
+
+    <!-- Main Calculator Card -->
+    <div class="calc-card">
+      <div class="calc-body">
+
+        <!-- Questions Side -->
+        <div>
+          <div class="calc-questions" id="questionsWrap">
+
+            <!-- STEP 1: Service Type -->
+            <div class="step-panel active" id="step-1">
+              <div class="step-eyebrow">Step 1 of 5</div>
+              <div class="step-title">What do you need built?</div>
+              <div class="step-sub">Select the primary service for your project.</div>
+              <div class="opts-grid">
+                <div class="opt-card" onclick="selectOpt(this,'service','web')" data-val="web">
+                  <div class="opt-icon"><i data-lucide="globe" aria-hidden="true"></i></div>
+                  <div>
+                    <div class="opt-name">Website or store</div>
+                    <div class="opt-desc">Sites, landing pages, and online stores</div>
+                    <div class="opt-price">From GH₵2,000</div>
+                  </div>
+                </div>
+                <div class="opt-card" onclick="selectOpt(this,'service','software')" data-val="software">
+                  <div class="opt-icon"><i data-lucide="layout-dashboard" aria-hidden="true"></i></div>
+                  <div>
+                    <div class="opt-name">Custom software</div>
+                    <div class="opt-desc">POS, CRM, school, booking, and mobile apps</div>
+                    <div class="opt-price">From GH₵5,200</div>
+                  </div>
+                </div>
+                <div class="opt-card" onclick="selectOpt(this,'service','automation')" data-val="automation">
+                  <div class="opt-icon"><i data-lucide="workflow" aria-hidden="true"></i></div>
+                  <div>
+                    <div class="opt-name">Automation and ProDesk24</div>
+                    <div class="opt-desc">Setup, workflows, dashboards, and data migration</div>
+                    <div class="opt-price">From GH₵500</div>
+                  </div>
+                </div>
+                <div class="opt-card" onclick="selectOpt(this,'service','marketing')" data-val="marketing">
+                  <div class="opt-icon"><i data-lucide="megaphone" aria-hidden="true"></i></div>
+                  <div>
+                    <div class="opt-name">Digital marketing</div>
+                    <div class="opt-desc">Social, ads, SEO, and content. Ad spend is separate.</div>
+                    <div class="opt-price">From GH₵400</div>
+                  </div>
+                </div>
+                <div class="opt-card" onclick="selectOpt(this,'service','branding')" data-val="branding">
+                  <div class="opt-icon"><i data-lucide="palette" aria-hidden="true"></i></div>
+                  <div>
+                    <div class="opt-name">Branding and design</div>
+                    <div class="opt-desc">Logo, identity, stationery, and social graphics</div>
+                    <div class="opt-price">From GH₵150</div>
+                  </div>
+                </div>
+                <div class="opt-card" onclick="selectOpt(this,'service','consulting')" data-val="consulting">
+                  <div class="opt-icon"><i data-lucide="headset" aria-hidden="true"></i></div>
+                  <div>
+                    <div class="opt-name">IT consulting and office IT</div>
+                    <div class="opt-desc">Advice, training, networks, and on-site support</div>
+                    <div class="opt-price">From GH₵200</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: Scope (dynamic based on service) -->
+            <div class="step-panel" id="step-2">
+              <div class="step-eyebrow">Step 2 of 5</div>
+              <div class="step-title" id="s2title">What's the scale?</div>
+              <div class="step-sub" id="s2sub">Choose the option that best describes what you need.</div>
+              <div class="opts-grid" id="s2opts"></div>
+            </div>
+
+            <!-- STEP 3: Key Features -->
+            <div class="step-panel" id="step-3">
+              <div class="step-eyebrow">Step 3 of 5</div>
+              <div class="step-title" id="s3title">Any add-ons?</div>
+              <div class="step-sub" id="s3sub">Optional items from the price list. Skip this step if you do not need them.</div>
+              <div class="opts-grid" id="s3opts"></div>
+            </div>
+
+            <!-- STEP 4: Add-ons -->
+            <div class="step-panel" id="step-4">
+              <div class="step-eyebrow">Step 4 of 5</div>
+              <div class="step-title" id="s4title">Ongoing support?</div>
+              <div class="step-sub" id="s4sub">Maintenance and retainers are billed separately from the project fee.</div>
+              <div class="addons-grid" id="s4opts"></div>
+            </div>
+
+            <!-- STEP 5: Timeline -->
+            <div class="step-panel" id="step-5">
+              <div class="step-eyebrow">Step 5 of 5</div>
+              <div class="step-title">How soon do you need it?</div>
+              <div class="step-sub">Standard delivery is included in the starting price. A rush request is priced only when it is shorter than half the usual time.</div>
+              <div class="timeline-opts">
+                <button class="tl-opt" onclick="selectTimeline(this,'flexible', 1, 1)">Flexible — no rush</button>
+                <button class="tl-opt" onclick="selectTimeline(this,'standard', 1, 1)">Standard delivery</button>
+                <button class="tl-opt" onclick="selectTimeline(this,'rush', 1.25, 1.5)">Rush — under half the usual time</button>
+              </div>
+              <div class="tl-note" id="tlNote" style="display:none"></div>
+            </div>
+
+          </div>
+
+          <!-- Navigation -->
+          <div class="calc-nav">
+            <button class="calc-nav-back" id="backBtn" onclick="prevStep()" disabled>← Back</button>
+            <span class="step-counter" id="stepCounter">Step 1 of 5</span>
+            <button class="calc-nav-next" id="nextBtn" onclick="nextStep()" disabled>
+              Continue <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sidebar: Live Estimate -->
+        <div class="calc-sidebar">
+          <div class="sidebar-label">Live Estimate</div>
+          <div class="estimate-amount" id="liveAmount">GH₵0</div>
+          <div class="estimate-range" id="liveRange">Select options to see your estimate</div>
+
+          <div class="estimate-breakdown" id="breakdownWrap">
+            <div class="empty-state" id="emptyState">
+              <div class="empty-icon"><i data-lucide="calculator" aria-hidden="true"></i></div>
+              <p>Your estimate builds up here as you make selections.</p>
+            </div>
+            <div id="breakdownItems" style="display:none">
+              <div class="breakdown-title">Breakdown</div>
+              <div id="bdList"></div>
+              <div class="estimate-total-row">
+                <span class="et-label">Estimate</span>
+                <span class="et-amount" id="etAmount">GH₵0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-note">
+            <strong>Starting prices in GH₵, before tax.</strong> The written quotation is the figure you approve. Work starts after the deposit clears.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RESULT PANEL (full width, shown after step 5) -->
+      <div class="result-panel" id="resultPanel">
+        <div class="result-header">
+          <div class="check-ring"><i data-lucide="target" aria-hidden="true"></i></div>
+          <h2>Your Project Estimate</h2>
+          <p>Based on your selections, here's what your project could cost with CodeCraft Technologies.</p>
+        </div>
+
+        <div class="result-estimate-box">
+          <div>
+            <div class="reb-label">Estimated Investment</div>
+            <div class="reb-amount" id="finalAmount">GH₵0</div>
+            <div class="reb-note" id="payNote">Starting price in Ghana cedis, before tax. A written quotation confirms the final figure.</div>
+          </div>
+          <div class="reb-timeline">
+            <div class="reb-label">Estimated Timeline</div>
+            <div class="reb-amount" id="finalTimeline">—</div>
+            <div class="reb-note" id="finalTimelineNote"></div>
+          </div>
+        </div>
+
+        <div class="result-breakdown">
+          <div class="rb-header"><span>What's Included</span><span>Cost</span></div>
+          <div id="resultBreakdown"></div>
+          <div class="rb-total">
+            <span>Total Estimate</span>
+            <span id="rbTotal">GH₵0</span>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <a href="contact.html" class="btn btn-primary" style="justify-content:center;font-size:0.9rem;">
+            Get an Exact Quote →
+          </a>
+          <a href="resources.html?tab=booking" class="btn btn-outline" style="justify-content:center;font-size:0.9rem;">
+            Book Free Consultation
+          </a>
+        </div>
+        <div class="result-note">
+          <span class="inline-icon"><i data-lucide="lightbulb" aria-hidden="true"></i></span> Standard package quotations are valid for 30 days. Custom work and retainers are valid for 14 days. Mention this estimate when you <a href="contact.html" style="color:var(--accent);font-weight:600;">request a quotation</a>.
+        </div>
+        <div style="text-align:center;margin-top:1.5rem;">
+          <button onclick="resetCalc()" style="background:none;border:none;color:var(--gray-400);font-size:0.82rem;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:underline;">↺ Start over with different options</button>
+        </div>
+      </div>
+
+    </div><!-- /calc-card -->
+
+  </div><!-- /calc-container -->
+</div><!-- /calc-page -->
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+        <h3>Code<span>Craft</span> Technologies</h3>
+      <p>Empowering businesses with innovative digital solutions since 2019. Based in Accra, serving the world.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html#websites">Websites</a></li>
+      <li><a href="services.html#software">Custom software</a></li>
+      <li><a href="services.html#marketing">Digital marketing</a></li>
+      <li><a href="services.html#packages">Prices</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="calculator.html">Pricing Calculator</a></li>
+      <li><a href="resources.html?tab=booking">Book Consultation</a></li>
+      <li><a href="portfolio.html">Our Portfolio</a></li>
+      <li><a href="products.html">Our Products</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resources.html?tab=terms">Terms & Conditions</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Codecraft Technologies. All rights reserved. Operating locally as CodeCraft Ghana. <a href="privacy-policy.html">Privacy Policy</a> | <a href="resources.html?tab=terms">Terms of Service</a></span>
+    <span>hello@codecraftgh.com · +233 549 739 010</span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<div class="wa-float">
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+  <a class="wa-btn" href="https://wa.me/233549739010?text=Hi%20CodeCraft%20Ghana%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C8.82 3 3 8.82 3 16c0 2.38.65 4.6 1.77 6.52L3 29l6.65-1.74A13 13 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="white"/>
+      <path d="M22.1 19.6c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="#25D366"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+  /* ═══════════════════════════════════════════════
+     DATA
+  ═══════════════════════════════════════════════ */
+  const SERVICE_DATA = {
+    web: {
+      s2title: 'Which website?',
+      s2sub: 'These are starting prices. Domain, SSL, and hosting for year one are included in the standard packages.',
+      s3title: 'Website add-ons',
+      s3sub: 'Published add-on prices. Skip anything you do not need.',
+      s4title: 'Website maintenance',
+      s4sub: 'Optional monthly care after the included support period. Billed monthly in advance.',
+      s4empty: '',
+      timelines: {
+        flexible: 'Fitted into the regular schedule. Starter sites are usually 7–14 days.',
+        standard: 'Starter site 7–10 days, store 10–14 days, business site 2–3 weeks, premium store 4–6 weeks.',
+        rush: 'Shorter than half the usual time, and only if we have capacity.'
+      },
+      resultNote: 'Year-one domain, SSL, and hosting are included in the website packages and are not removed from the price if you decline them. Renewals are GH₵400–800 a year.',
+      s2opts: [
+        { icon:'file-text', name:'Starter Website', desc:'Up to 5 pages, contact form, WhatsApp, basic SEO, 1 business email. 7–10 days.', val:'starter', min:2000, max:2000 },
+        { icon:'shopping-bag', name:'Starter Online Store', desc:'Up to 20 products, MoMo, Telecel Cash, and card checkout. 10–14 days.', val:'store', min:2000, max:2000 },
+        { icon:'file-text', name:'Landing page', desc:'One conversion-focused page, with a form and tracking.', val:'landing', min:2000, max:2000 },
+        { icon:'user', name:'Personal or portfolio website', desc:'Gallery, CV or portfolio sections, and a contact form.', val:'portfolio', min:2500, max:2500 },
+        { icon:'refresh-cw', name:'Website redesign', desc:'Priced on pages, complexity, and content migration.', val:'redesign', min:2500, max:2500, from:true },
+        { icon:'building-2', name:'Business Website', desc:'Up to 10 custom pages, blog, gallery, booking or enquiries. 2–3 weeks.', val:'business', min:4500, max:4500 },
+        { icon:'calendar', name:'Booking or appointment website', desc:'Online scheduling, confirmations, and reminders.', val:'booking-site', min:6000, max:6000 },
+        { icon:'landmark', name:'Professional corporate website', desc:'Custom design, about 15 pages, CMS, and SEO foundations.', val:'corporate', min:7000, max:7000 },
+        { icon:'store', name:'Premium E-Commerce', desc:'Unlimited products, accounts, inventory, and training. 4–6 weeks.', val:'premium', min:8500, max:8500 },
+        { icon:'users', name:'Membership or directory website', desc:'Accounts, listings, search, and filters.', val:'directory', min:8000, max:8000, from:true },
+        { icon:'lock-keyhole', name:'Custom web portal', desc:'Logins, roles, and workflows. Discovery is required.', val:'portal', min:10000, max:10000, from:true },
+        { icon:'shopping-cart', name:'Advanced e-commerce platform', desc:'Multi-vendor, custom checkout, or ERP and POS integration.', val:'advanced-store', min:12000, max:12000, from:true },
+        { icon:'library', name:'Institutional or custom-theme website', desc:'25+ pages and a theme built from scratch. Quoted after discovery.', val:'institutional', min:15000, max:15000, from:true }
+      ],
+      s3opts: [
+        { icon:'file-plus', name:'Extra page', desc:'Each additional website page.', val:'page', min:200, max:200 },
+        { icon:'package', name:'Extra product', desc:'Each product beyond the package limit.', val:'product', min:5, max:5 },
+        { icon:'pen-line', name:'Content writing (per page)', desc:'Copywriting, starting price per page.', val:'copy', min:300, max:300, from:true },
+        { icon:'palette', name:'Starter logo and brand kit', desc:'With a website package. Limited concepts and revisions.', val:'brandkit', min:500, max:500, from:true },
+        { icon:'image', name:'Social media graphics pack', desc:'Branded templates and starter graphics.', val:'graphics', min:600, max:600, from:true },
+        { icon:'mail', name:'Business email setup', desc:'Stand-alone mailbox setup.', val:'email', min:300, max:300 },
+        { icon:'credit-card', name:'Payment gateway or API', desc:'When it is not already included in the package.', val:'gateway', min:2000, max:2000, from:true },
+        { icon:'shield', name:'Security and performance audit', desc:'Review of the website’s security and speed.', val:'audit', min:750, max:750 }
+      ],
+      addons: [
+        { icon:'shield', name:'Maintenance — Lite', desc:'1 hour a month. Response within 2 business days.', val:'lite', min:250, max:250, from:true, unit:'/ month' },
+        { icon:'shield', name:'Maintenance — Basic', desc:'2 hours a month. Response within 1 business day.', val:'basic', min:500, max:500, unit:'/ month' },
+        { icon:'shield', name:'Maintenance — Standard', desc:'4 hours a month. Response within 8 business hours.', val:'standard-care', min:800, max:800, unit:'/ month' },
+        { icon:'shield', name:'Maintenance — Advanced', desc:'8 hours a month. Response within 4 business hours.', val:'advanced-care', min:1500, max:1500, unit:'/ month' },
+        { icon:'globe', name:'Domain and hosting renewal', desc:'After the included first year.', val:'renewal', min:400, max:800, unit:'/ year' }
+      ]
+    },
+    software: {
+      s2title: 'Which system?',
+      s2sub: 'Custom systems are quoted after discovery. The range is the published starting band.',
+      s3title: 'Related work',
+      s3sub: 'Add only what the project needs.',
+      s4title: 'After launch',
+      s4sub: 'Yearly support is about 15% of the build price. Hosting for custom systems is billed separately, at cost.',
+      timelines: {
+        flexible: 'Scheduled after discovery and a cleared deposit.',
+        standard: 'POS custom builds are often 3–8 weeks. An ERP suite is often 3–6 months.',
+        rush: 'Shorter than half the usual time, and only if we have capacity.'
+      },
+      resultNote: 'The build includes discovery, a working demo, training, a user guide, and 3 months of post-launch support. Systems of GH₵15,000 and above start with technical discovery from GH₵1,000, credited in full if you proceed within 30 days.',
+      s2opts: [
+        { icon:'store', name:'POS implementation', desc:'Configured on an existing platform.', val:'pos-setup', min:5200, max:5200, from:true },
+        { icon:'store', name:'POS and inventory, custom build', desc:'Built for your workflow. Usually 3–8 weeks.', val:'pos-custom', min:7000, max:25000 },
+        { icon:'users', name:'CRM system', desc:'Usually 4–8 weeks.', val:'crm', min:8000, max:30000 },
+        { icon:'warehouse', name:'Inventory management', desc:'Multi-location stock, purchasing, and stock control.', val:'inventory', min:10000, max:10000, from:true },
+        { icon:'layout-dashboard', name:'Other custom system or portal', desc:'Clinic, hotel, delivery, fleet, and similar.', val:'other', min:10000, max:10000, from:true },
+        { icon:'briefcase', name:'Basic business management system', desc:'Quoted after discovery.', val:'bms', min:12000, max:12000, from:true },
+        { icon:'users', name:'HR and payroll system', desc:'Quoted after discovery.', val:'hr', min:12000, max:12000, from:true },
+        { icon:'calendar', name:'Booking and reservation system', desc:'Quoted after discovery.', val:'reserve', min:12000, max:12000, from:true },
+        { icon:'graduation-cap', name:'School management system', desc:'Quoted after discovery.', val:'school', min:15000, max:15000, from:true },
+        { icon:'globe', name:'Custom business web application', desc:'Quoted after discovery.', val:'webapp', min:15000, max:15000, from:true },
+        { icon:'factory', name:'Manufacturing and production system', desc:'Usually 8–16 weeks.', val:'manufacturing', min:15000, max:60000 },
+        { icon:'building-2', name:'Advanced enterprise software', desc:'Quoted after discovery.', val:'enterprise', min:25000, max:25000, from:true },
+        { icon:'smartphone', name:'Mobile application', desc:'Quoted after discovery.', val:'mobile', min:25000, max:25000, from:true },
+        { icon:'layers', name:'ERP suite', desc:'Usually 3–6 months.', val:'erp', min:40000, max:40000, from:true }
+      ],
+      s3opts: [
+        { icon:'link', name:'API integration', desc:'A scoped integration, quoted from the list price.', val:'api', min:2000, max:2000, from:true },
+        { icon:'database', name:'Data import and migration', desc:'Priced by volume.', val:'migration', min:500, max:500, from:true }
+      ],
+      addons: [
+        { icon:'refresh-cw', name:'Yearly support and updates', desc:'About 15% of the build price. New features are quoted separately.', val:'yearly', pct:0.15, unit:'/ year' }
+      ]
+    },
+    automation: {
+      s2title: 'What should we automate?',
+      s2sub: 'Implementation fees are separate from the ProDesk24 subscription.',
+      s3title: 'Extra implementation work',
+      s3sub: 'Add a workflow, dashboard, or data move if you need it.',
+      s4title: 'Subscription and support',
+      s4sub: 'ProDesk24 plans are billed separately. Support on the Automate package starts from GH₵500 a month.',
+      timelines: {
+        flexible: 'Scheduled after the deposit and access to the current system.',
+        standard: 'Setup and training are scoped in the quotation.',
+        rush: 'Shorter than half the usual time, and only if we have capacity.'
+      },
+      resultNote: 'ProDesk24 subscription fees follow the ProDesk24 plan and are not included here.',
+      s2opts: [
+        { icon:'database', name:'Data import and migration', desc:'Priced by volume.', val:'migration', min:500, max:500, from:true },
+        { icon:'graduation-cap', name:'ProDesk24 setup and training', desc:'Onboarding and team training.', val:'onboarding', min:1000, max:1000, from:true },
+        { icon:'workflow', name:'Workflow automation', desc:'Priced per workflow.', val:'workflow', min:2500, max:2500, from:true },
+        { icon:'bar-chart-3', name:'Reporting dashboard', desc:'A scoped reporting view.', val:'dashboard', min:3000, max:3000, from:true },
+        { icon:'store', name:'POS, inventory, or accounting setup', desc:'Configuration on an existing platform.', val:'config', min:5200, max:5200, from:true },
+        { icon:'rocket', name:'Automate package', desc:'Configuration, onboarding, training, and workflow improvements.', val:'automate', min:5200, max:5200, from:true }
+      ],
+      s3opts: [
+        { icon:'link', name:'API integration', desc:'Connect another system.', val:'api', min:2000, max:2000, from:true },
+        { icon:'workflow', name:'Additional workflow', desc:'One more workflow, if setup is already selected.', val:'workflow-extra', min:2500, max:2500, from:true }
+      ],
+      addons: [
+        { icon:'headset', name:'Ongoing support', desc:'As on the Automate package.', val:'support', min:500, max:500, from:true, unit:'/ month' },
+        { icon:'credit-card', name:'ProDesk24 subscription', desc:'Billed on the ProDesk24 plan, not in this estimate.', val:'subscription', quote:true }
+      ]
+    },
+    marketing: {
+      s2title: 'What marketing help?',
+      s2sub: 'Management fees do not include advertising spend. You fund ads directly.',
+      s3title: 'Add another marketing item',
+      s3sub: 'Useful when the main selection does not cover setup or tracking.',
+      s4title: 'Nothing further to add',
+      s4sub: 'Retainers run for at least three months and are billed monthly in advance.',
+      s4empty: 'Advertising spend is paid by you before a campaign runs. A monthly retainer includes a performance report and has a three-month minimum.',
+      timelines: {
+        flexible: 'Setup is scheduled after the deposit. Retainers then run monthly.',
+        standard: 'Setup first, then the monthly retainer if you chose one.',
+        rush: 'A faster start still needs your ad budget in place before campaigns run.'
+      },
+      resultNote: 'Say how many posts, designs, videos, and reports you expect each month. That list goes in the quotation.',
+      s2opts: [
+        { icon:'map-pin', name:'Google Business Profile', desc:'Setup and local visibility.', val:'gbp', min:400, max:400 },
+        { icon:'smartphone', name:'Social media account setup', desc:'Accounts set up and ready to post.', val:'social-setup', min:500, max:500 },
+        { icon:'megaphone', name:'Meta Ads campaign setup', desc:'Campaign structure. Ad spend is separate.', val:'ads-setup', min:750, max:750 },
+        { icon:'line-chart', name:'Conversion tracking setup', desc:'So you can see which campaigns produce leads.', val:'tracking', min:750, max:750 },
+        { icon:'pen-line', name:'Standard content package', desc:'A defined batch of content. The quotation states the volume.', val:'content', min:1000, max:1000 },
+        { icon:'search', name:'Marketing audit', desc:'A review of the current channels.', val:'audit', min:1000, max:1000 },
+        { icon:'banknote', name:'Ads management', desc:'Monthly management. Ad spend is separate.', val:'ads', min:1000, max:1000, unit:'/ month' },
+        { icon:'target', name:'Digital marketing strategy', desc:'A written plan for the channels you will use.', val:'strategy', min:1500, max:1500 },
+        { icon:'search', name:'SEO setup', desc:'Foundations for search visibility.', val:'seo', min:1500, max:1500 },
+        { icon:'smartphone', name:'Social media management', desc:'Monthly management and reporting.', val:'social', min:1500, max:1500, unit:'/ month' },
+        { icon:'search', name:'Monthly SEO management', desc:'Ongoing search work and reporting.', val:'seo-month', min:1500, max:1500, unit:'/ month' },
+        { icon:'newspaper', name:'Monthly content package', desc:'The quotation states the monthly volume.', val:'content-month', min:2000, max:2000 },
+        { icon:'file-text', name:'Lead-generation landing page', desc:'A page built to capture enquiries.', val:'lead', min:2500, max:2500, from:true }
+      ],
+      s3opts: [
+        { icon:'image', name:'Social media graphics pack', desc:'Templates and starter graphics.', val:'graphics', min:600, max:600, from:true },
+        { icon:'pen-line', name:'Content writing (per page)', desc:'If a page needs written copy.', val:'copy', min:300, max:300, from:true }
+      ],
+      addons: []
+    },
+    branding: {
+      s2title: 'What design work?',
+      s2sub: 'Printing, photography, and stock assets are quoted separately.',
+      s3title: 'Add-ons',
+      s3sub: 'Design packages are selected in the previous step. Printing is separate.',
+      s4title: 'Production',
+      s4sub: 'Print and photography are not included in design fees.',
+      s4empty: 'Printing, photography, and stock assets are quoted separately and funded before they are incurred.',
+      timelines: {
+        flexible: 'Scheduled after the deposit and your brief.',
+        standard: 'The quotation states the revision limit and the delivery date.',
+        rush: 'Shorter than half the usual time, and only if we have capacity.'
+      },
+      resultNote: 'A starter logo and brand kit is an add-on to a website package. A stand-alone logo is GH₵1,000.',
+      s2opts: [
+        { icon:'file-text', name:'Flyer or promotional design', desc:'A single design.', val:'flyer', min:150, max:150 },
+        { icon:'panel-top', name:'Roll-up banner design', desc:'Print-ready file. Printing is separate.', val:'banner', min:400, max:400 },
+        { icon:'presentation', name:'Presentation design', desc:'A designed slide deck.', val:'slides', min:500, max:500 },
+        { icon:'palette', name:'Starter logo and brand kit', desc:'Only with a website package. Limited concepts and revisions.', val:'kit', min:500, max:500, from:true },
+        { icon:'image', name:'Social media design bundle', desc:'Branded templates and starter graphics.', val:'social', min:600, max:600 },
+        { icon:'file-text', name:'Business profile design', desc:'You supply the content.', val:'profile', min:800, max:800 },
+        { icon:'printer', name:'Corporate stationery package', desc:'Cards, letterhead, envelope, and invoice templates.', val:'stationery', min:800, max:800 },
+        { icon:'pen-tool', name:'Logo design', desc:'A stand-alone logo.', val:'logo', min:1000, max:1000 },
+        { icon:'book-open', name:'Company profile, writing and design', desc:'Includes copywriting.', val:'company', min:1500, max:1500 },
+        { icon:'palette', name:'Complete brand identity', desc:'Logo, colours, typography, and usage guidelines.', val:'identity', min:2000, max:2000 }
+      ],
+      s3opts: [],
+      addons: []
+    },
+    consulting: {
+      s2title: 'What IT help?',
+      s2sub: 'Hourly and daily rates are the published prices, not a full project total.',
+      s3title: 'Already in the list above',
+      s3sub: 'Go back if you need a different IT service. This step does not add a second copy of it.',
+      s4title: 'Equipment',
+      s4sub: 'Hardware is paid in advance.',
+      timelines: {
+        flexible: 'Booked after the scope and any visit charge are confirmed.',
+        standard: 'A half-day or full-day session, or a scoped setup.',
+        rush: 'Shorter than half the usual time, and only if we have capacity.'
+      },
+      resultNote: 'The first discovery call is free for up to 30 minutes. On-site visits are confirmed, and charged, before anyone travels.',
+      s2opts: [
+        { icon:'monitor', name:'Workstation configuration', desc:'Per workstation.', val:'workstation', min:200, max:200, unit:'per workstation' },
+        { icon:'headset', name:'Technical consultation', desc:'Advice and troubleshooting.', val:'consult', min:300, max:300, unit:'/ hour' },
+        { icon:'mail', name:'Business email setup', desc:'Mailbox setup.', val:'email', min:300, max:300 },
+        { icon:'map-pin', name:'On-site technical support', desc:'Plus transport. Confirmed before the visit.', val:'onsite', min:400, max:400, from:true, unit:'/ visit' },
+        { icon:'book-open', name:'Documentation and user guides', desc:'Written for the team that will use the system.', val:'docs', min:500, max:500, from:true },
+        { icon:'search', name:'Technical discovery and specification', desc:'Credited against the project if you proceed within 30 days.', val:'discovery', min:1000, max:1000, from:true },
+        { icon:'graduation-cap', name:'Staff training, half day', desc:'A half-day session.', val:'half', min:1000, max:1000 },
+        { icon:'graduation-cap', name:'Staff training, full day', desc:'A full-day session.', val:'full', min:1800, max:1800 },
+        { icon:'network', name:'Small office network setup', desc:'Quoted after a site survey.', val:'network', min:1500, max:1500, from:true },
+        { icon:'search', name:'Business software assessment', desc:'A review of the tools you already use.', val:'assessment', min:1500, max:1500, from:true },
+        { icon:'calendar', name:'Digital transformation consulting', desc:'A 7-hour day.', val:'day', min:2000, max:2000, unit:'/ day' }
+      ],
+      s3opts: [],
+      addons: [
+        { icon:'package', name:'Hardware procurement', desc:'At cost, plus a 10% handling fee, paid in advance.', val:'hardware', quote:true }
+      ]
+    }
+  };
+
+  const state = {
+    step: 1,
+    service: null,
+    scope: null,
+    features: [],
+    addons: [],
+    timeline: null,
+    timelineMin: 1,
+    timelineMax: 1,
+    scopeMin: 0,
+    scopeMax: 0
+  };
+
+  function fmtFull(n) {
+    return 'GH₵' + Math.round(n).toLocaleString('en-GH');
+  }
+
+  function resolveOpt(o) {
+    if (!o) return null;
+    if (o.pct) {
+      const baseMin = state.scopeMin || 0;
+      const baseMax = state.scopeMax || baseMin;
+      return Object.assign({}, o, {
+        min: Math.round(baseMin * o.pct),
+        max: Math.round(baseMax * o.pct),
+        from: false
+      });
+    }
+    return Object.assign({}, o, { max: o.max == null ? o.min : o.max });
+  }
+
+  function formatOpt(o) {
+    if (!o || o.quote) return 'Quoted separately';
+    const suffix = o.unit ? ' ' + o.unit : '';
+    if (o.from && o.min === o.max) return 'From ' + fmtFull(o.min) + suffix;
+    if (o.min === o.max) return fmtFull(o.min) + suffix;
+    return fmtFull(o.min) + ' – ' + fmtFull(o.max) + suffix;
+  }
+
+  function collectLines() {
+    if (!state.service || !state.scope) return [];
+    const d = SERVICE_DATA[state.service];
+    const lines = [];
+    const scope = resolveOpt(d.s2opts.find(x => x.val === state.scope));
+    if (scope) lines.push(scope);
+    state.features.forEach(val => {
+      const o = resolveOpt((d.s3opts || []).find(x => x.val === val));
+      if (o) lines.push(o);
+    });
+    state.addons.forEach(val => {
+      const o = resolveOpt((d.addons || []).find(x => x.val === val));
+      if (o) lines.push(o);
+    });
+    return lines;
+  }
+
+  function calcTotal() {
+    const lines = collectLines();
+    let min = 0;
+    let max = 0;
+    const side = [];
+    lines.forEach(o => {
+      if (o.quote || o.unit) side.push(o);
+      else { min += o.min; max += o.max; }
+    });
+    const tMin = state.timelineMin || 1;
+    const tMax = state.timelineMax || 1;
+    if ((min || max) && (tMin !== 1 || tMax !== 1)) {
+      min = Math.round(min * tMin);
+      max = Math.round(max * tMax);
+    }
+    const onceLines = lines.filter(o => !o.unit && !o.quote);
+    const hasRange = onceLines.some(o => o.max > o.min) || tMin !== tMax;
+    const hasFrom = onceLines.some(o => o.from) && !hasRange;
+    return { min, max, side, lines, hasFrom };
+  }
+
+  function moneyLabel(t) {
+    if (t.min || t.max) {
+      if (t.min === t.max) return (t.hasFrom ? 'From ' : '') + fmtFull(t.min);
+      return fmtFull(t.min) + ' – ' + fmtFull(t.max);
+    }
+    if (t.side.length === 1) return formatOpt(t.side[0]);
+    if (t.side.length > 1) return 'See breakdown';
+    return 'GH₵0';
+  }
+
+  function updateSidebar() {
+    const t = calcTotal();
+    const live = document.getElementById('liveAmount');
+    const range = document.getElementById('liveRange');
+    const etAmount = document.getElementById('etAmount');
+    if (!state.service) {
+      live.textContent = 'GH₵0';
+      range.textContent = 'Select options to see your estimate';
+      return;
+    }
+    const label = state.scope ? moneyLabel(t) : 'Choose a scope';
+    live.textContent = label;
+    range.textContent = 'Starting price in GH₵, before tax';
+    if (etAmount) etAmount.textContent = label;
+
+    const empty = document.getElementById('emptyState');
+    const bdWrap = document.getElementById('breakdownItems');
+    const bdList = document.getElementById('bdList');
+    empty.style.display = 'none';
+    bdWrap.style.display = 'block';
+
+    let html = '';
+    t.lines.forEach(o => {
+      html += `<div class="breakdown-item"><div class="bi-name"><strong>${iconMarkup(o.icon)} ${o.name}</strong></div><div class="bi-price">${formatOpt(o)}</div></div>`;
+    });
+    if (((state.timelineMin || 1) !== 1 || (state.timelineMax || 1) !== 1) && (t.min || t.max)) {
+      html += '<div class="breakdown-item"><div class="bi-name"><strong>Rush premium</strong>25–50% on the project fee</div><div class="bi-price">Included above</div></div>';
+    }
+    bdList.innerHTML = html || '<div class="breakdown-item"><div class="bi-name" style="color:var(--gray-600)">Keep selecting to see the breakdown.</div></div>';
+  }
+
+  function selectOpt(el, type, val) {
+    el.closest('.opts-grid').querySelectorAll('.opt-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    if (type === 'service') {
+      state.service = val;
+      state.scope = null;
+      state.features = [];
+      state.addons = [];
+      state.scopeMin = 0;
+      state.scopeMax = 0;
+      buildStep2();
+    } else if (type === 'scope') {
+      state.scope = val;
+      const o = resolveOpt(SERVICE_DATA[state.service].s2opts.find(x => x.val === val));
+      if (o && !o.unit && !o.quote) {
+        state.scopeMin = o.min;
+        state.scopeMax = o.max;
+      } else {
+        state.scopeMin = 0;
+        state.scopeMax = 0;
+      }
+    }
+    document.getElementById('nextBtn').disabled = false;
+    updateSidebar();
+  }
+
+  function toggleFeature(el, val) {
+    el.classList.toggle('selected');
+    if (state.features.includes(val)) state.features = state.features.filter(f => f !== val);
+    else state.features.push(val);
+    updateSidebar();
+  }
+
+  function toggleAddon(el, val) {
+    el.classList.toggle('selected');
+    if (state.addons.includes(val)) state.addons = state.addons.filter(a => a !== val);
+    else state.addons.push(val);
+    updateSidebar();
+  }
+
+  function selectTimeline(el, key, minM, maxM) {
+    document.querySelectorAll('.tl-opt').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    state.timeline = key;
+    state.timelineMin = minM;
+    state.timelineMax = maxM;
+    const notes = {
+      flexible: 'No rush premium. We fit the work into the regular schedule.',
+      standard: 'Standard delivery. No rush premium.',
+      rush: 'A rush premium of 25–50% applies to the project fee, and only if we have capacity. Monthly and hourly rates are not increased here.'
+    };
+    const noteEl = document.getElementById('tlNote');
+    noteEl.textContent = notes[key];
+    noteEl.style.display = 'block';
+    document.getElementById('nextBtn').disabled = false;
+    updateSidebar();
+  }
+
+  function optionCard(o, kind) {
+    const handler = kind === 'scope'
+      ? `selectOpt(this,'scope','${o.val}')`
+      : (kind === 'feature' ? `toggleFeature(this,'${o.val}')` : `toggleAddon(this,'${o.val}')`);
+    const cls = kind === 'addon' ? 'addon-card' : 'opt-card';
+    const nameCls = kind === 'addon' ? 'addon-name' : 'opt-name';
+    const priceCls = kind === 'addon' ? 'addon-price' : 'opt-price';
+    const iconCls = kind === 'addon' ? 'addon-icon' : 'opt-icon';
+    return `<div class="${cls}" onclick="${handler}" data-val="${o.val}">
+      <div class="${iconCls}">${iconMarkup(o.icon)}</div>
+      <div>
+        <div class="${nameCls}">${o.name}</div>
+        ${o.desc && kind !== 'addon' ? `<div class="opt-desc">${o.desc}</div>` : ''}
+        <div class="${priceCls}">${formatOpt(resolveOpt(o))}</div>
+      </div>
+    </div>`;
+  }
+
+  function buildStep2() {
+    const d = SERVICE_DATA[state.service];
+    document.getElementById('s2title').textContent = d.s2title;
+    document.getElementById('s2sub').textContent = d.s2sub;
+    document.getElementById('s2opts').innerHTML = d.s2opts.map(o => optionCard(o, 'scope')).join('');
+    if (window.refreshIcons) refreshIcons();
+  }
+
+  function buildStep3() {
+    const d = SERVICE_DATA[state.service];
+    document.getElementById('s3title').textContent = d.s3title;
+    document.getElementById('s3sub').textContent = d.s3sub;
+    const grid = document.getElementById('s3opts');
+    if (!d.s3opts || !d.s3opts.length) {
+      grid.innerHTML = '<p style="color:var(--gray-600);font-size:0.9rem;line-height:1.6;">Nothing further to add. Continue when you are ready.</p>';
+      return;
+    }
+    grid.innerHTML = d.s3opts.map(o => optionCard(o, 'feature')).join('');
+    if (window.refreshIcons) refreshIcons();
+  }
+
+  function buildStep4() {
+    const d = SERVICE_DATA[state.service];
+    document.getElementById('s4title').textContent = d.s4title;
+    document.getElementById('s4sub').textContent = d.s4sub;
+    const grid = document.getElementById('s4opts');
+    if (!d.addons || !d.addons.length) {
+      grid.innerHTML = `<p style="color:var(--gray-600);font-size:0.9rem;line-height:1.6;">${d.s4empty || 'No separate support line for this service. Continue when you are ready.'}</p>`;
+      return;
+    }
+    grid.innerHTML = d.addons.map(o => optionCard(o, 'addon')).join('');
+    if (window.refreshIcons) refreshIcons();
+  }
+
+  function nextStep() {
+    if (state.step === 5) { showResult(); return; }
+    const from = state.step;
+    state.step++;
+    goToStep(from, state.step);
+  }
+
+  function prevStep() {
+    if (state.step <= 1) return;
+    const from = state.step;
+    state.step--;
+    goToStep(from, state.step);
+  }
+
+  function goToStep(from, to) {
+    document.getElementById('step-' + from).classList.remove('active');
+    document.getElementById('step-' + to).classList.add('active');
+    if (to === 2) buildStep2();
+    if (to === 3) buildStep3();
+    if (to === 4) buildStep4();
+
+    for (let i = 1; i <= 5; i++) {
+      const ps = document.getElementById('ps-' + i);
+      ps.classList.remove('active', 'done');
+      if (i < to) ps.classList.add('done');
+      else if (i === to) ps.classList.add('active');
+      if (i < 5) document.getElementById('pl-' + i).classList.toggle('done', i < to);
+    }
+
+    document.getElementById('backBtn').disabled = (to === 1);
+    document.getElementById('stepCounter').textContent = `Step ${to} of 5`;
+    const nextBtn = document.getElementById('nextBtn');
+    if (to === 3 || to === 4) {
+      nextBtn.disabled = false;
+      nextBtn.innerHTML = 'Continue <span>→</span>';
+    } else if (to === 5) {
+      nextBtn.disabled = !state.timeline;
+      nextBtn.innerHTML = 'See my estimate <span>→</span>';
+    } else {
+      const hasSelection = (to === 1 && state.service) || (to === 2 && state.scope);
+      nextBtn.disabled = !hasSelection;
+      nextBtn.innerHTML = 'Continue <span>→</span>';
+    }
+    if (window.refreshIcons) refreshIcons();
+  }
+
+  function showResult() {
+    const t = calcTotal();
+    const d = SERVICE_DATA[state.service];
+    document.getElementById('finalAmount').textContent = moneyLabel(t);
+    document.getElementById('finalTimeline').textContent = d.timelines[state.timeline || 'standard'];
+    const rushNote = state.timeline === 'rush'
+      ? 'Rush premium of 25–50% is included on the one-time project fee.'
+      : 'No rush premium.';
+    document.getElementById('finalTimelineNote').textContent = rushNote;
+    document.getElementById('payNote').textContent = (d.resultNote ? d.resultNote + ' ' : '') +
+      'Prices exclude tax. Up to GH₵5,000 is 70% deposit and 30% before handover. GH₵5,001–15,000 is 60% / 30% / 10%. GH₵15,001–50,000 is 50% / 30% / 20%. Above that, milestones are in the contract.';
+
+    let rbHtml = '';
+    t.lines.forEach(o => {
+      rbHtml += `<div class="rb-item"><div><div class="rb-item-name">${iconMarkup(o.icon)} ${o.name}</div><div class="rb-item-sub">${o.desc || ''}</div></div><div class="rb-item-price">${formatOpt(o)}</div></div>`;
+    });
+    if (state.timeline === 'rush') {
+      rbHtml += '<div class="rb-item"><div><div class="rb-item-name">Rush premium</div><div class="rb-item-sub">25–50% on the one-time project fee</div></div><div class="rb-item-price">Included</div></div>';
+    }
+    document.getElementById('resultBreakdown').innerHTML = rbHtml;
+    document.getElementById('rbTotal').textContent = moneyLabel(t);
+
+    document.getElementById('questionsWrap').style.display = 'none';
+    document.querySelector('.calc-nav').style.display = 'none';
+    document.getElementById('resultPanel').classList.add('active');
+    document.querySelector('.calc-sidebar').style.background = 'var(--accent-dark)';
+    for (let i = 1; i <= 5; i++) {
+      document.getElementById('ps-' + i).classList.remove('active');
+      document.getElementById('ps-' + i).classList.add('done');
+      if (i < 5) document.getElementById('pl-' + i).classList.add('done');
+    }
+    if (window.refreshIcons) refreshIcons();
+  }
+
+  function resetCalc() {
+    state.step = 1;
+    state.service = null;
+    state.scope = null;
+    state.features = [];
+    state.addons = [];
+    state.timeline = null;
+    state.timelineMin = 1;
+    state.timelineMax = 1;
+    state.scopeMin = 0;
+    state.scopeMax = 0;
+
+    document.getElementById('questionsWrap').style.display = 'block';
+    document.querySelector('.calc-nav').style.display = 'flex';
+    document.getElementById('resultPanel').classList.remove('active');
+    document.querySelector('.calc-sidebar').style.background = 'var(--black)';
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('step-1').classList.add('active');
+    for (let i = 1; i <= 5; i++) {
+      const ps = document.getElementById('ps-' + i);
+      ps.classList.remove('active', 'done');
+      if (i === 1) ps.classList.add('active');
+      if (i < 5) document.getElementById('pl-' + i).classList.remove('done');
+    }
+    document.getElementById('backBtn').disabled = true;
+    document.getElementById('nextBtn').disabled = true;
+    document.getElementById('nextBtn').innerHTML = 'Continue <span>→</span>';
+    document.getElementById('stepCounter').textContent = 'Step 1 of 5';
+    document.getElementById('liveAmount').textContent = 'GH₵0';
+    document.getElementById('liveRange').textContent = 'Select options to see your estimate';
+    document.getElementById('emptyState').style.display = 'flex';
+    document.getElementById('breakdownItems').style.display = 'none';
+    document.getElementById('tlNote').style.display = 'none';
+    document.querySelectorAll('.opt-card, .addon-card, .tl-opt').forEach(el => el.classList.remove('selected'));
+  }
+
+  function iconMarkup(name) {
+    return '<i data-lucide="' + name + '" aria-hidden="true"></i>';
+  }
+
+  function toggleNav() { document.getElementById('navbar').classList.toggle('open'); }
+</script>
+  <script src="motion.js"></script>
+<script src="icons.js"></script>
+</body>
+</html>

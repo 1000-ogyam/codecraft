@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Primary Meta Tags for Search Engines -->
+  <title>Portfolio | Web & Software Projects — Codecraft Technologies Ghana</title>
+  <meta name="title" content="Portfolio | Web & Software Projects — Codecraft Technologies Ghana">
+  <meta name="description" content="View the Codecraft Technologies portfolio: 80+ web, fintech, and digital projects delivered for clients across Ghana and Africa.">
+  <meta name="keywords" content="Codecraft Technologies, CodeCraft Ghana, software development Accra, web design Ghana, fintech solutions Accra, ProDesk24, digital agency Ghana">
+  <meta name="author" content="Codecraft Technologies">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://codecraftgh.com/portfolio.html">
+
+  <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codecraftgh.com/portfolio.html">
+  <meta property="og:title" content="Project Portfolio | Codecraft Technologies Ghana">
+  <meta property="og:description" content="Selected web, fintech, and digital work from our Accra-based software engineering team.">
+  <meta property="og:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Codecraft Technologies">
+  <meta property="og:locale" content="en_GH">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@codecraftgh">
+  <meta name="twitter:url" content="https://codecraftgh.com/portfolio.html">
+  <meta name="twitter:title" content="Project Portfolio | Codecraft Technologies Ghana">
+  <meta name="twitter:description" content="Selected web, fintech, and digital work from our Accra-based software engineering team.">
+  <meta name="twitter:image" content="https://codecraftgh.com/assets/images/og-share-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <meta name="theme-color" content="#10b068">
+
+  <!-- Google-Structured Organization Schema Markup (Crucial for Brand Connection) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Codecraft Technologies",
+    "legalName": "Codecraft Technologies",
+    "alternateName": "CodeCraft Ghana",
+    "url": "https://codecraftgh.com",
+    "logo": "https://codecraftgh.com/assets/images/logo.png",
+    "description": "A premier digital agency and software development company based in Accra, Ghana, specializing in custom web applications, mobile apps, and fintech solutions.",
+    "foundingDate": "2019",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "GM-108 Adam Street",
+      "addressLocality": "Accra",
+      "addressRegion": "Greater Accra",
+      "addressCountry": "GH"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+233-549-739-010",
+      "contactType": "sales",
+      "email": "hello@codecraftgh.com",
+      "availableLanguage": "en"
+    },
+    "sameAs": [
+      "https://facebook.com/codecraftgh",
+      "https://instagram.com/codecraftgh",
+      "https://linkedin.com/company/codecraftgh",
+      "https://twitter.com/codecraftgh"
+    ],
+    "numberOfEmployees": {"@type": "QuantitativeValue", "value": 7},
+    "areaServed": ["Ghana", "Nigeria", "West Africa", "United Kingdom", "United States"]
+  }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css?v=7">
+
+  <style>
+    .filter-bar {
+      display: flex; gap: 0.8rem; flex-wrap: wrap;
+      padding: 2rem 5% 0; background: var(--offwhite);
+    }
+    .filter-btn {
+      padding: 0.5rem 1.2rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 100px;
+      background: var(--white);
+      font-size: 0.8rem; font-weight: 600;
+      cursor: pointer; transition: all var(--transition);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--black); color: var(--white); border-color: var(--black);
+    }
+
+    .portfolio-section { background: var(--offwhite); padding: 3rem 5% 100px; }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    a.portfolio-card {
+      text-decoration: none; color: inherit; display: block;
+    }
+    .portfolio-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200); overflow: hidden;
+      transition: all var(--transition); cursor: pointer;
+      position: relative;
+    }
+    .portfolio-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .portfolio-card.featured { grid-column: span 2; }
+    .portfolio-card.is-static { cursor: default; }
+
+    .card-visual {
+      height: 200px; display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; position: relative; overflow: hidden;
+    }
+    .portfolio-card.featured .card-visual { height: 260px; }
+    .card-visual.has-thumb { background: var(--gray-900); }
+    .card-visual.has-thumb img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;
+    }
+    .card-visual.has-thumb .card-visual-icon { display: none; }
+    .cv-1 { background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 100%); }
+    .cv-2 { background: linear-gradient(135deg, #1a2e1a 0%, #2d5a2d 100%); }
+    .cv-3 { background: linear-gradient(135deg, #2a1a1a 0%, #5a2020 100%); }
+    .cv-4 { background: linear-gradient(135deg, #1a1a2e 0%, #3a2060 100%); }
+    .cv-5 { background: linear-gradient(135deg, #2a2010 0%, #6b4f2a 100%); }
+    .cv-6 { background: linear-gradient(135deg, #0d2a2a 0%, #1a5a5a 100%); }
+    .cv-7 { background: linear-gradient(135deg, #1a0d2a 0%, #3a1a5a 100%); }
+    .cv-8 { background: linear-gradient(135deg, #2a1a0d 0%, #5a3a1a 100%); }
+    .cv-9 { background: linear-gradient(135deg, #0a2a1a 0%, #1a5a3a 100%); }
+
+    .card-overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(200,169,110,0.1);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .portfolio-card:hover .card-overlay { opacity: 1; }
+    .overlay-link {
+      background: var(--white); color: var(--black);
+      padding: 0.6rem 1.4rem; border-radius: var(--radius);
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+    }
+
+    .card-body { padding: 1.8rem; }
+    .card-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+    .card-tag {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.25rem 0.7rem;
+      background: var(--gray-100); color: var(--gray-600);
+      border-radius: 100px;
+    }
+    .card-body h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card-body p { font-size: 0.86rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 1rem; }
+    .card-results {
+      display: flex; gap: 1.5rem;
+      padding-top: 1rem; border-top: 1px solid var(--gray-100);
+    }
+    .card-result span { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: block; }
+    .card-result p { font-size: 0.7rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; margin: 0; }
+
+    /* Testimonial quote */
+    .portfolio-quote {
+      background: var(--black); color: var(--white);
+      padding: 80px 5%; margin: 0;
+    }
+    .quote-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .quote-inner blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      line-height: 1.5; color: var(--white);
+      margin-bottom: 2rem; font-style: italic;
+    }
+    .quote-inner cite { font-size: 0.85rem; color: var(--accent); font-style: normal; font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-card.featured { grid-column: span 1; }
+    }
+    @media (max-width: 600px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Code<span>Craft</span> Technologies</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub">
+      <a href="services.html">Services <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu submenu-wide">
+        <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="services.html#software">Custom software<small>From GH₵5,200</small></a></li>
+        <li><a href="services.html#ai">AI<small>Quoted from the brief</small></a></li>
+        <li><a href="services.html#automation">Automation<small>From GH₵1,000</small></a></li>
+        <li><a href="services.html#marketing">Digital marketing<small>From GH₵400</small></a></li>
+        <li><a href="services.html#branding">Branding<small>From GH₵150</small></a></li>
+        <li><a href="services.html#consulting">IT consulting<small>GH₵300 / hour</small></a></li>
+        <li><a href="services.html#packages">Packages<small>From GH₵5,250</small></a></li>
+        <li><a href="services.html#maintenance">Maintenance<small>From GH₵250 / month</small></a></li>
+        <li><a href="calculator.html">Price calculator<small>Build a starting figure</small></a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="products.html">Products <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="products.html#prodesk24">ProDesk24</a></li>
+        <li><a href="products.html#zone">Zone</a></li>
+        <li><a href="products.html#launch">Launch package</a></li>
+        <li><a href="products.html#codeboost">Codeboost</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="portfolio.html" class="active">Portfolio <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="portfolio.html">All projects</a></li>
+        <li><a href="portfolio.html?filter=web">Websites</a></li>
+        <li><a href="portfolio.html?filter=ecommerce">Online stores</a></li>
+        <li><a href="portfolio.html?filter=marketing">Marketing</a></li>
+        <li><a href="portfolio.html?filter=branding">Branding</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="industries.html">Industries <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu sectors">
+                <li><a href="industries.html">All 20 sectors</a></li>
+        <li><a href="industries.html#agri">Agri-business</a></li>
+        <li><a href="industries.html#automotive">Automotive and transport</a></li>
+        <li><a href="industries.html#beverages">Beverages</a></li>
+        <li><a href="industries.html#consultancy">Business promotion and consultancy</a></li>
+        <li><a href="industries.html#wood">Wood processing</a></li>
+        <li><a href="industries.html#construction">Construction</a></li>
+        <li><a href="industries.html#cosmetics">Cosmetics and toiletries</a></li>
+        <li><a href="industries.html#electricals">Electricals and electronics</a></li>
+        <li><a href="industries.html#energy">Energy</a></li>
+        <li><a href="industries.html#environment">Environment and sanitation</a></li>
+        <li><a href="industries.html#export">Export</a></li>
+        <li><a href="industries.html#finance">Financial services</a></li>
+        <li><a href="industries.html#food">Food</a></li>
+        <li><a href="industries.html#garments">Garment, leather and textiles</a></li>
+        <li><a href="industries.html#hospitality">Hospitality and tourism</a></li>
+        <li><a href="industries.html#ict">ICT</a></li>
+        <li><a href="industries.html#metal">Metal and building products</a></li>
+        <li><a href="industries.html#oilgas">Oil and gas services</a></li>
+        <li><a href="industries.html#printing">Printing, packaging and stationery</a></li>
+        <li><a href="industries.html#rubber">Rubber and plastic</a></li></ul>
+    </li>
+    <li class="has-sub">
+      <a href="about.html">About <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="about.html#story">Our story</a></li>
+        <li><a href="about.html#mission">Mission and vision</a></li>
+        <li><a href="about.html#values">What we stand for</a></li>
+        <li><a href="about.html#team">The team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </li>
+    <li class="has-sub">
+      <a href="resources.html">Resources <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="resources.html?tab=faq">FAQs</a></li>
+        <li><a href="resources.html?tab=booking">Book a call</a></li>
+        <li><a href="resources.html?tab=payment">Pay an invoice</a></li>
+        <li><a href="resources.html?tab=terms">Terms</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-header media" style="--header-image:url('assets/images/studio-collab.jpg')">
+  <span class="section-label">Our Work</span>
+  <h1>80+ Projects.<br>Real Results.</h1>
+  <p>From national associations to fast-growing startups — here's a selection of the work we're proud of.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all" type="button">All Projects</button>
+  <button class="filter-btn" data-filter="web" type="button">Web Development</button>
+  <button class="filter-btn" data-filter="marketing" type="button">Digital Marketing</button>
+  <button class="filter-btn" data-filter="fintech" type="button">Fintech</button>
+  <button class="filter-btn" data-filter="ecommerce" type="button">E-Commerce</button>
+  <button class="filter-btn" data-filter="branding" type="button">Branding</button>
+</div>
+
+<div class="portfolio-section">
+  <div class="portfolio-grid">
+
+    <!-- Featured: AGI Ghana -->
+    <a href="https://agighana.org/" class="portfolio-card featured" target="_blank" rel="noopener noreferrer" data-filter="web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-agighana.png" alt="AGI Ghana — Association of Ghana Industries homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Platform</span><span class="card-tag">Digital Transformation</span><span class="card-tag">Enterprise</span></div>
+        <h3>AGI Ghana — Digital Platform</h3>
+        <p>Built a comprehensive member management and communications platform for the Association of Ghana Industries, streamlining operations for one of Ghana's most prestigious industrial bodies.</p>
+        <div class="card-results">
+          <div class="card-result"><span>3×</span><p>Member engagement</p></div>
+          <div class="card-result"><span>60%</span><p>Admin time saved</p></div>
+          <div class="card-result"><span>500+</span><p>Members served</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Bestseller Ghana -->
+    <a href="https://bestsellerghana.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce marketing">
+      <div class="card-visual cv-2">
+        <span class="card-visual-icon"><i data-lucide="shirt" aria-hidden="true"></i></span>
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">E-Commerce</span><span class="card-tag">Digital Marketing</span></div>
+        <h3>Bestseller Ghana</h3>
+        <p>Full e-commerce build and digital marketing rollout for one of Ghana's leading fashion retailers.</p>
+        <div class="card-results">
+          <div class="card-result"><span>180%</span><p>Sales growth</p></div>
+          <div class="card-result"><span>12k+</span><p>Monthly visitors</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- The General Merchant -->
+    <a href="https://tgeneralmerchant.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-tgeneralmerchant.png" alt="The General Merchant — makeup and beauty store homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">E-Commerce</span><span class="card-tag">WooCommerce</span><span class="card-tag">Beauty Retail</span></div>
+        <h3>The General Merchant — Glam Haven</h3>
+        <p>Full WooCommerce makeup store with category navigation, mega sales campaigns, mobile checkout, and Paystack-ready shopping for Ghana's beauty market.</p>
+        <div class="card-results">
+          <div class="card-result"><span>900+</span><p>Products listed</p></div>
+          <div class="card-result"><span>20%</span><p>Mega sale promos</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Hair Palace Gh -->
+    <a href="https://hairpalacegh.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-hairpalacegh.png" alt="Hair Palace Gh — premium hair store homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">E-Commerce</span><span class="card-tag">Beauty</span><span class="card-tag">Retail</span></div>
+        <h3>Hair Palace Gh</h3>
+        <p>Premium human-hair store with category shopping, nationwide delivery, and a walk-in presence at Ghana Ephesian Shopping Arena in Madina.</p>
+        <div class="card-results">
+          <div class="card-result"><span>Shop</span><p>Live catalogue</p></div>
+          <div class="card-result"><span>GH</span><p>Nationwide delivery</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Kalyppo -->
+    <a href="https://kalyppo.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web branding marketing">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-kalyppo.png" alt="Kalyppo Ghana — natural fruit juice brand homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">Branding</span><span class="card-tag">FMCG</span></div>
+        <h3>Kalyppo Ghana Beverages</h3>
+        <p>Official brand website for Ghana's flagship natural juice line — flavours, story, gallery, and product showcase for Aquafresh Ltd.</p>
+        <div class="card-results">
+          <div class="card-result"><span>7</span><p>Flavour variants</p></div>
+          <div class="card-result"><span>1998</span><p>Brand heritage</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Shopster GH -->
+    <a href="https://shopstergh.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual cv-4">
+        <span class="card-visual-icon"><i data-lucide="shopping-cart" aria-hidden="true"></i></span>
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">E-Commerce</span><span class="card-tag">Web Dev</span></div>
+        <h3>Shopster GH</h3>
+        <p>End-to-end e-commerce platform development with payment integration and vendor management for this growing Ghanaian marketplace.</p>
+        <div class="card-results">
+          <div class="card-result"><span>200+</span><p>Vendors onboarded</p></div>
+          <div class="card-result"><span>5k+</span><p>Monthly orders</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Amrealty -->
+    <a href="https://amrealtygh.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web">
+      <div class="card-visual cv-5">
+        <span class="card-visual-icon"><i data-lucide="home" aria-hidden="true"></i></span>
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">SEO</span><span class="card-tag">Real Estate</span></div>
+        <h3>Amrealty</h3>
+        <p>Property listing platform with advanced search, virtual tours integration, and lead capture system for this real estate firm.</p>
+        <div class="card-results">
+          <div class="card-result"><span>4×</span><p>Lead generation</p></div>
+          <div class="card-result"><span>Top 3</span><p>Google ranking</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Whitesand Travel -->
+    <a href="https://whitesandtravelconsult.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-whitesand.png" alt="White Sand Travel Consult homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">Booking System</span></div>
+        <h3>Whitesand Travel Consult</h3>
+        <p>Complete travel agency website with custom booking system, visa consultation intake, and itinerary management tools.</p>
+        <div class="card-results">
+          <div class="card-result"><span>70%</span><p>Enquiries online</p></div>
+          <div class="card-result"><span>2×</span><p>Conversion rate</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- BlackHistory Festivals -->
+    <div class="portfolio-card is-static" data-filter="branding web">
+      <div class="card-visual cv-7">
+        <span class="card-visual-icon"><i data-lucide="masks-theater" aria-hidden="true"></i></span>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Branding</span><span class="card-tag">Web Dev</span><span class="card-tag">Events</span></div>
+        <h3>BlackHistory Festivals</h3>
+        <p>Brand identity and event website for this Pan-African cultural festival, including ticketing and sponsorship systems.</p>
+        <div class="card-results">
+          <div class="card-result"><span>5k+</span><p>Tickets sold online</p></div>
+          <div class="card-result"><span>15+</span><p>Sponsors acquired</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vandecor -->
+    <a href="https://vandecor.com.gh/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web branding">
+      <div class="card-visual cv-8">
+        <span class="card-visual-icon"><i data-lucide="house" aria-hidden="true"></i></span>
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">Branding</span><span class="card-tag">Interior Design</span></div>
+        <h3>Vandecor</h3>
+        <p>Luxury portfolio website and brand identity for this premium interior design and décor firm, showcasing projects with immersive visuals.</p>
+        <div class="card-results">
+          <div class="card-result"><span>90%</span><p>Client satisfaction</p></div>
+          <div class="card-result"><span>3×</span><p>Enquiry rate</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Sulu Nero Ghana -->
+    <a href="https://suluneroghana.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web branding">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-nero.png" alt="Sulu Nero — mineral water brand homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">Branding</span><span class="card-tag">Beverages</span></div>
+        <h3>Sulu Nero — Mineral Water &amp; Soft Drinks</h3>
+        <p>Corporate brand site for Sulu Investments — Nero Prime water, cola, orange, lemon, bovino, and Zeera flavours with sustainability and careers sections.</p>
+        <div class="card-results">
+          <div class="card-result"><span>5</span><p>CS flavour SKUs</p></div>
+          <div class="card-result"><span>2014</span><p>Founded</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- ABLAT Food Stuffs -->
+    <a href="https://ablatgh.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-ablat.png" alt="ABLAT Food Stuffs — grocery store homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">E-Commerce</span><span class="card-tag">WooCommerce</span><span class="card-tag">Grocery</span></div>
+        <h3>ABLAT Food Stuffs</h3>
+        <p>Online grocery store with fresh produce, staples, spices, and Sunday free delivery — category-led shopping for households across Ghana.</p>
+        <div class="card-results">
+          <div class="card-result"><span>300+</span><p>Products</p></div>
+          <div class="card-result"><span>20%</span><p>Promo discounts</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- PacoB Collect -->
+    <a href="https://pacobcollect.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-pacobcollect.png" alt="PacoB Collect — municipal revenue collection sign-in" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Platform</span><span class="card-tag">Portal</span></div>
+        <h3>PacoB Collect</h3>
+        <p>Municipal revenue collection system for field agents and municipal admins, with secure sign-in and an Android app for collections.</p>
+        <div class="card-results">
+          <div class="card-result"><span>24/7</span><p>Online access</p></div>
+          <div class="card-result"><span>Secure</span><p>Staff sign-in</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Pepper Dem -->
+    <a href="https://pepperdem.net/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web ecommerce">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-pepperdem.png" alt="Pepper Dem — Ghanaian food ordering homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Food Ordering</span><span class="card-tag">Web App</span><span class="card-tag">Mobile Money</span></div>
+        <h3>Pepper Dem</h3>
+        <p>Digital menu and ordering site for Jollof, Waakye, and plain rice combos — delivery, pickup, cart checkout, and MoMo payments.</p>
+        <div class="card-results">
+          <div class="card-result"><span>GH₵</span><p>Online checkout</p></div>
+          <div class="card-result"><span>7 days</span><p>Open weekly</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- GoldCity FC -->
+    <a href="https://goldcityfc.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web branding">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-goldcityfc.png" alt="GoldCity Football Club homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">Sports</span><span class="card-tag">Club</span></div>
+        <h3>GoldCity Football Club</h3>
+        <p>Official club website with team profiles, scouting events, news, partners, and medical screening — Division 2 football in Ghana.</p>
+        <div class="card-results">
+          <div class="card-result"><span>Div 2</span><p>League club</p></div>
+          <div class="card-result"><span>Live</span><p>News &amp; media</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- IB/IGB Ghana -->
+    <a href="https://ib-igb.agighana.org/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-ib-igb.png" alt="Inclusive Business and Inclusive Green Business in Ghana homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Platform</span><span class="card-tag">Programme</span></div>
+        <h3>IB/IGB Ghana</h3>
+        <p>Programme site for Inclusive Business and Inclusive Green Business in Ghana, an initiative of AGI and the Ministry of Trade, Agribusiness and Industry. The site covers the model, accredited business lines, coaches, events, and partners.</p>
+        <div class="card-results">
+          <div class="card-result"><span>AGI</span><p>With MoTAI</p></div>
+          <div class="card-result"><span>Live</span><p>Knowledge hub</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Optimal Green -->
+    <a href="https://optimalgreengh.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-optimalgreen.png" alt="Optimal Green — natural foods shop homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">E-Commerce</span><span class="card-tag">Food</span></div>
+        <h3>Optimal Green</h3>
+        <p>Online shop for Optimal Green Ltd in Aburi: FDA and GSA certified snacks, spices, and flours, with nationwide delivery, WhatsApp orders, and mobile-money checkout.</p>
+        <div class="card-results">
+          <div class="card-result"><span>FDA</span><p>GSA certified</p></div>
+          <div class="card-result"><span>GH</span><p>Nationwide delivery</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- PL Pharmaceuticals -->
+    <a href="https://plpharmaceuticalsltd.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-plpharma.png" alt="PL Pharmaceuticals branch workspace sign-in" width="1400" height="520" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web App</span><span class="card-tag">Pharmacy</span></div>
+        <h3>PL Pharmaceuticals</h3>
+        <p>Branch workspace for wholesale, retail, inventory, and clinical work, so every sale, batch, and prescription stays in one sign-in for the counter team.</p>
+        <div class="card-results">
+          <div class="card-result"><span>Branch</span><p>Workspace</p></div>
+          <div class="card-result"><span>Staff</span><p>Sign-in</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Amazing Feet -->
+    <a href="https://amazingfeetgh.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-amazingfeet.png" alt="Amazing Feet retail POS sign-in" width="1400" height="500" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Retail POS</span><span class="card-tag">Web App</span></div>
+        <h3>Amazing Feet</h3>
+        <p>Lightweight retail point of sale for the shop floor: sales, stock, staff, and targets, from the counter through to the owner desk.</p>
+        <div class="card-results">
+          <div class="card-result"><span>POS</span><p>Sales &amp; stock</p></div>
+          <div class="card-result"><span>Accra</span><p>Shop operations</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- 34B Company -->
+    <a href="https://34bcompanyltd.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-34b.png" alt="34B Company Ltd — automotive parts and sourcing homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">E-Commerce</span><span class="card-tag">Automotive</span></div>
+        <h3>34B Company Ltd</h3>
+        <p>Automotive parts and global sourcing site for retail, wholesale, preorder, and product search by vehicle, part number, OE number, or VIN. Delivery covers Accra, Tema, Kumasi, Takoradi, and nationwide.</p>
+        <div class="card-results">
+          <div class="card-result"><span>Parts</span><p>Search &amp; supply</p></div>
+          <div class="card-result"><span>GH</span><p>Nationwide delivery</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Ahead Media Apparel -->
+    <a href="https://aheadmediaapparel.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-aheadmedia.png" alt="Ahead Media Apparel homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">Apparel</span></div>
+        <h3>Ahead Media Apparel</h3>
+        <p>Manufacturer site for polo shirts, jerseys, uniforms, aprons, and bags, with custom design, sublimation, and bulk or private-label orders from Pokuase Amanfro.</p>
+        <div class="card-results">
+          <div class="card-result"><span>Made</span><p>Custom apparel</p></div>
+          <div class="card-result"><span>GH</span><p>Pokuase workshop</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- A&B Wine & Liquor -->
+    <a href="https://abwineandliquorghana.com/" class="portfolio-card" target="_blank" rel="noopener noreferrer" data-filter="ecommerce web">
+      <div class="card-visual has-thumb">
+        <img src="assets/images/portfolio/portfolio-abwine.png" alt="A&amp;B Wine and Liquor Shop homepage" width="1400" height="900" loading="lazy">
+        <div class="card-overlay"><span class="overlay-link">Visit Live Site →</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags"><span class="card-tag">Web Dev</span><span class="card-tag">Beverages</span></div>
+        <h3>A&amp;B Wine &amp; Liquor</h3>
+        <p>Shop site for whiskies, wines, champagne, cognac, and beer, with an age check, product categories, WhatsApp orders, and the Asamankese station store.</p>
+        <div class="card-results">
+          <div class="card-result"><span>Shop</span><p>Spirits &amp; wine</p></div>
+          <div class="card-result"><span>18+</span><p>Age check</p></div>
+        </div>
+      </div>
+    </a>
+
+    <!-- More CTA card -->
+    <div class="portfolio-card" data-filter="all" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:300px;background:var(--offwhite);border-style:dashed;">
+      <div style="font-size:2.5rem;margin-bottom:1rem;"><i data-lucide="folder-open" aria-hidden="true"></i></div>
+      <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">80+ More Projects</h3>
+      <p style="color:var(--gray-600);font-size:0.85rem;margin-bottom:1.5rem;">From roofing companies to oil services — we've served businesses across every industry in Ghana.</p>
+      <a href="contact.html" class="btn btn-primary btn-sm">Discuss Your Project →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Quote -->
+<div class="portfolio-quote">
+  <div class="quote-inner">
+    <blockquote>"CodeCraft Ghana's expertise has been invaluable. Their software development and consulting services have streamlined our operations and improved our customer experience significantly."</blockquote>
+    <cite>— Kwame O., Fintech Founder & CodeCraft Ghana Client</cite>
+  </div>
+</div>
+
+<section style="background:var(--accent);padding:80px 5%;text-align:center;">
+  <h2 style="color:var(--white);margin-bottom:1rem;">Ready to Be Our Next Success Story?</h2>
+  <p style="color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 2rem;">Tell us about your project and let's figure out how to get you results like these.</p>
+  <a href="contact.html" class="btn btn-primary">Start Your Project →</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><h3>Code<span>Craft</span> Ghana</h3><p>Empowering businesses and individuals with innovative digital solutions since 2019.</p></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#websites">Websites</a></li><li><a href="services.html#software">Custom software</a></li><li><a href="services.html#packages">Prices</a></li></ul></div>
+    <div class="footer-col"><h4>Products</h4><ul><li><a href="https://prodesk24.com/" target="_blank">ProDesk24</a></li><li><a href="https://zone.codecraftgh.com/" target="_blank">Zone</a></li><li><a href="https://codeboost.shop/" target="_blank">Codeboost</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Codecraft Technologies. All rights reserved. Operating locally as CodeCraft Ghana. <a href="privacy-policy.html">Privacy Policy</a> | <a href="resources.html?tab=terms">Terms of Service</a></span><span>hello@codecraftgh.com</span></div>
+</footer>
+
+<script>
+  function toggleNav() { document.getElementById('navbar').classList.toggle('open'); }
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter || 'all';
+      document.querySelectorAll('.portfolio-grid > [data-filter]').forEach(card => {
+        const cats = (card.dataset.filter || '').split(/\s+/);
+        const show = filter === 'all' || cats.includes(filter);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+  const preset = new URLSearchParams(location.search).get('filter');
+  if (preset) {
+    const presetBtn = document.querySelector('.filter-btn[data-filter="' + preset + '"]');
+    if (presetBtn) presetBtn.click();
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.portfolio-card').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(20px)';
+    el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+  <script src="motion.js"></script>
+<script src="icons.js"></script>
+</body>
+</html>

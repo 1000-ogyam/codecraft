@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copy to mail.local.php and set your mailbox password.
+ * Hostinger: smtp.hostinger.com, port 465, SSL.
+ */
+return [
+    'smtp_host'     => 'smtp.hostinger.com',
+    'smtp_port'     => 465,
+    'smtp_secure'   => 'ssl',
+    'smtp_user'     => 'hello@codecraftgh.com',
+    'smtp_pass'     => 'YOUR_MAILBOX_PASSWORD',
+    'from_email'    => 'hello@codecraftgh.com',
+    'from_name'     => 'CodeCraft Ghana Website',
+    'to_email'      => 'hello@codecraftgh.com',
+    'to_name'       => 'CodeCraft Ghana',
+];
