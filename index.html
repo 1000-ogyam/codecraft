@@ -209,13 +209,15 @@
       to { transform: translateX(-50%); }
     }
     .client-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      color: var(--gray-600);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
       transition: color var(--transition);
       font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.01em;
     }
-    .client-name:hover { color: var(--accent); }
+    .client-name:hover { color: #fff; }
 
     /* ── SERVICES ── */
     .services { background: var(--white); }
@@ -545,6 +547,29 @@
     .hero-points { display: flex; gap: 1.4rem; flex-wrap: wrap; list-style: none; padding: 0; }
     .hero-points li { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.9); }
     .hero-points li::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: 0.45rem; }
+    .hero-google {
+      display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 0.9rem;
+      color: #fff; font-size: 0.86rem; font-weight: 600; text-decoration: none;
+    }
+    .hero-google:hover { color: #b8ecd5; }
+    .hero-google span { color: #f5c451; letter-spacing: 0.08em; }
+    .hero-switch { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0 0 1rem; }
+    .hero-switch button {
+      font: inherit; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: #fff; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px; padding: 0.42rem 0.85rem; cursor: pointer;
+    }
+    .hero-switch button.is-on { background: #fff; color: #102018; border-color: #fff; }
+    .home-faq { background: #fff; }
+    .faq-list { max-width: 760px; display: flex; flex-direction: column; gap: 0.7rem; }
+    .faq-list details {
+      border: 1px solid var(--gray-200); border-radius: 14px; background: var(--offwhite); padding: 0.2rem 1.1rem;
+    }
+    .faq-list summary { cursor: pointer; font-weight: 600; padding: 0.9rem 0; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { content: '+'; float: right; color: var(--accent-dark); font-weight: 700; }
+    .faq-list details[open] summary::after { content: '–'; }
+    .faq-list details p { color: var(--gray-600); margin: 0 0 1rem; max-width: 62ch; }
 
     body.home nav {
       background: rgba(8, 14, 11, 0.46);
@@ -657,6 +682,7 @@
       <a href="services.html">Services <span class="caret" aria-hidden="true"></span></a>
       <ul class="submenu submenu-wide">
         <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="enterprise.html">Enterprise<small>From GH₵25,000</small></a></li>
         <li><a href="services.html#software">Custom software<small>From GH₵5,200</small></a></li>
         <li><a href="services.html#ai">AI<small>Quoted from the brief</small></a></li>
         <li><a href="services.html#automation">Automation<small>From GH₵1,000</small></a></li>
@@ -722,9 +748,18 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </li>
+        <li class="has-sub">
+      <a href="mentorship.html">Mentorship <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="mentorship-students.html">Students</a></li>
+        <li><a href="mentorship-it.html">Youth and IT</a></li>
+        <li><a href="mentorship-business.html">Business owners</a></li>
+      </ul>
+    </li>
     <li class="has-sub">
       <a href="resources.html">Resources <span class="caret" aria-hidden="true"></span></a>
       <ul class="submenu">
+        <li><a href="blog/">Blog</a></li>
         <li><a href="resources.html?tab=faq">FAQs</a></li>
         <li><a href="resources.html?tab=booking">Book a call</a></li>
         <li><a href="resources.html?tab=payment">Pay an invoice</a></li>
@@ -750,11 +785,16 @@
   <div class="hero-shade"></div>
   <div class="hero-glow" id="heroGlow"></div>
   <div class="hero-content">
-    <p class="hero-kicker">Accra · Websites · Software · Marketing</p>
+    <p class="hero-kicker" id="heroKicker">Accra · Websites · Software · Marketing</p>
     <h1>Digital work that wins the next customer.</h1>
-    <p>We design and build websites, online stores, and business systems for companies in Ghana. Prices are in cedis, and nothing starts until you approve a written quote.</p>
+    <div class="hero-switch" role="tablist" aria-label="What you want to launch">
+      <button type="button" class="is-on" role="tab" aria-selected="true" data-offer="web">Websites</button>
+      <button type="button" role="tab" aria-selected="false" data-offer="store">Stores</button>
+      <button type="button" role="tab" aria-selected="false" data-offer="ai">AI</button>
+    </div>
+    <p id="heroLead">A starter website is GH₵2,000. A business website is GH₵4,500. Year-one domain, SSL, and hosting are included, and work starts only after you approve a written quote.</p>
     <div class="hero-actions">
-      <a href="contact.html" class="btn btn-accent">Get a quote</a>
+      <a href="contact.html" class="btn btn-accent" id="heroPrimary">Get a written quote</a>
       <a href="calculator.html" class="btn btn-ghost">Estimate a project</a>
     </div>
     <ul class="hero-points">
@@ -762,30 +802,36 @@
       <li>100+ clients</li>
       <li>First call is free</li>
     </ul>
+    <a class="hero-google" href="https://www.google.com/maps?cid=5081301182725787091" target="_blank" rel="noopener">
+      <span aria-hidden="true">★★★★★</span> 5.0 on Google · 1 review
+    </a>
   </div>
 </section>
 
 <!-- CLIENTS -->
 <div class="clients">
-  <span class="clients-label">Trusted by</span>
+  <span class="clients-label">Open a live site</span>
   <div class="clients-scroll">
-    <span class="client-name">AGI Ghana</span>
-    <span class="client-name">Bestseller Ghana</span>
-    <span class="client-name">Kalyppo</span>
-    <span class="client-name">Shopster GH</span>
-    <span class="client-name">Amrealty</span>
-    <span class="client-name">Whitesand Travel</span>
-    <span class="client-name">BlackHistory Festivals</span>
-    <span class="client-name">Vandecor</span>
-    <!-- repeat for smooth loop -->
-    <span class="client-name">AGI Ghana</span>
-    <span class="client-name">Bestseller Ghana</span>
-    <span class="client-name">Kalyppo</span>
-    <span class="client-name">Shopster GH</span>
-    <span class="client-name">Amrealty</span>
-    <span class="client-name">Whitesand Travel</span>
-    <span class="client-name">BlackHistory Festivals</span>
-    <span class="client-name">Vandecor</span>
+    <a class="client-name" href="https://agighana.org/" target="_blank" rel="noopener">AGI Ghana</a>
+    <a class="client-name" href="https://kalyppo.com/" target="_blank" rel="noopener">Kalyppo</a>
+    <a class="client-name" href="https://hairpalacegh.com/" target="_blank" rel="noopener">Hair Palace</a>
+    <a class="client-name" href="https://pepperdem.net/" target="_blank" rel="noopener">Pepper Dem</a>
+    <a class="client-name" href="https://optimalgreengh.com/" target="_blank" rel="noopener">Optimal Green</a>
+    <a class="client-name" href="https://aheadmediaapparel.com/" target="_blank" rel="noopener">Ahead Media</a>
+    <a class="client-name" href="https://abwineandliquorghana.com/" target="_blank" rel="noopener">A&amp;B Wine</a>
+    <a class="client-name" href="https://34bcompanyltd.com/" target="_blank" rel="noopener">34B Company</a>
+    <a class="client-name" href="https://whitesandtravelconsult.com/" target="_blank" rel="noopener">Whitesand</a>
+    <a class="client-name" href="https://ib-igb.agighana.org/" target="_blank" rel="noopener">IB/IGB</a>
+    <a class="client-name" href="https://agighana.org/" target="_blank" rel="noopener">AGI Ghana</a>
+    <a class="client-name" href="https://kalyppo.com/" target="_blank" rel="noopener">Kalyppo</a>
+    <a class="client-name" href="https://hairpalacegh.com/" target="_blank" rel="noopener">Hair Palace</a>
+    <a class="client-name" href="https://pepperdem.net/" target="_blank" rel="noopener">Pepper Dem</a>
+    <a class="client-name" href="https://optimalgreengh.com/" target="_blank" rel="noopener">Optimal Green</a>
+    <a class="client-name" href="https://aheadmediaapparel.com/" target="_blank" rel="noopener">Ahead Media</a>
+    <a class="client-name" href="https://abwineandliquorghana.com/" target="_blank" rel="noopener">A&amp;B Wine</a>
+    <a class="client-name" href="https://34bcompanyltd.com/" target="_blank" rel="noopener">34B Company</a>
+    <a class="client-name" href="https://whitesandtravelconsult.com/" target="_blank" rel="noopener">Whitesand</a>
+    <a class="client-name" href="https://ib-igb.agighana.org/" target="_blank" rel="noopener">IB/IGB</a>
   </div>
 </div>
 
@@ -943,17 +989,17 @@
     <a href="portfolio.html" class="btn btn-outline btn-sm">All projects</a>
   </div>
   <div class="work-grid">
-    <a class="work-card work-card-wide" href="portfolio.html">
+    <a class="work-card work-card-wide" href="https://kalyppo.com/" target="_blank" rel="noopener">
       <img src="assets/images/portfolio/portfolio-kalyppo.png" alt="Kalyppo website design">
-      <div class="work-meta"><span>FMCG</span><strong>Kalyppo</strong></div>
+      <div class="work-meta"><span>Open the live site</span><strong>Kalyppo</strong></div>
     </a>
-    <a class="work-card" href="portfolio.html">
+    <a class="work-card" href="https://pepperdem.net/" target="_blank" rel="noopener">
       <img src="assets/images/portfolio/portfolio-pepperdem.png" alt="Pepperdem project">
-      <div class="work-meta"><span>Food</span><strong>Pepperdem</strong></div>
+      <div class="work-meta"><span>Open the live site</span><strong>Pepper Dem</strong></div>
     </a>
-    <a class="work-card" href="portfolio.html">
+    <a class="work-card" href="https://hairpalacegh.com/" target="_blank" rel="noopener">
       <img src="assets/images/portfolio/portfolio-hairpalacegh.png" alt="Hair Palace Ghana project">
-      <div class="work-meta"><span>Retail</span><strong>Hair Palace</strong></div>
+      <div class="work-meta"><span>Open the live site</span><strong>Hair Palace</strong></div>
     </a>
   </div>
 </section>
@@ -1058,6 +1104,33 @@
   </div>
 </section>
 
+<section class="home-faq">
+  <span class="section-label">Questions</span>
+  <h2 class="section-title">What Ghanaian businesses ask first</h2>
+  <div class="faq-list">
+    <details open>
+      <summary>How much does a website cost?</summary>
+      <p>A starter website or starter online store is GH₵2,000. A business website is GH₵4,500. A premium store is GH₵8,500. The first year of a .com, SSL, and hosting is included. Published prices exclude tax.</p>
+    </details>
+    <details>
+      <summary>Can the store take Mobile Money?</summary>
+      <p>Yes, when the quote includes a payment gateway. Gateway and API work starts from GH₵2,000. The methods, such as mobile money or Paystack, are named in the written scope.</p>
+    </details>
+    <details>
+      <summary>What happens after launch?</summary>
+      <p>Care plans start at GH₵250 a month. Included support after handover is 30 days on a starter, 3 months on a business site or custom system, and 6 months on a premium store.</p>
+    </details>
+    <details>
+      <summary>How do we start, and when do we pay?</summary>
+      <p>The first call is free, up to 30 minutes. Discovery stays free for up to 2 hours when the build is under GH₵15,000. Work up to GH₵5,000 is 70% before we start and 30% before handover. Nothing starts until the deposit is in.</p>
+    </details>
+    <details>
+      <summary>Do you quote AI as a package?</summary>
+      <p>No. Website assistants, WhatsApp follow-up, and search across your own content are quoted from the brief, with a person still in the loop.</p>
+    </details>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-copy">
@@ -1092,10 +1165,12 @@
       <ul>
         <li><a href="services.html#websites">Websites and stores</a></li>
         <li><a href="services.html#software">Custom software</a></li>
+        <li><a href="enterprise.html">Enterprise</a></li>
         <li><a href="services.html#marketing">Digital marketing</a></li>
         <li><a href="services.html#branding">Branding</a></li>
         <li><a href="services.html#packages">Packages and prices</a></li>
         <li><a href="calculator.html">Pricing calculator</a></li>
+        <li><a href="blog/">Blog</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1151,6 +1226,44 @@
       }
     });
   }, { threshold: 0.1 });
+  const offers = {
+    web: {
+      kicker: 'Websites · From GH₵2,000',
+      lead: 'A starter website is GH₵2,000. A business website is GH₵4,500. Year-one domain, SSL, and hosting are included, and work starts only after you approve a written quote.',
+      href: 'contact.html',
+      label: 'Get a written quote'
+    },
+    store: {
+      kicker: 'Online stores · From GH₵2,000',
+      lead: 'A starter store is GH₵2,000. A premium store is GH₵8,500. Your team can update products, and a payment gateway is quoted from GH₵2,000 when you need checkout.',
+      href: 'contact.html',
+      label: 'Start a store quote'
+    },
+    ai: {
+      kicker: 'AI · Quoted from the brief',
+      lead: 'Website and WhatsApp assistants answer repeat questions and sort enquiries. AI is scoped to your content, with a person in the loop, and priced from the brief rather than a fixed package.',
+      href: 'contact.html',
+      label: 'Scope an assistant'
+    }
+  };
+  const heroKicker = document.getElementById('heroKicker');
+  const heroLead = document.getElementById('heroLead');
+  const heroPrimary = document.getElementById('heroPrimary');
+  document.querySelectorAll('.hero-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const offer = offers[btn.dataset.offer];
+      if (!offer) return;
+      document.querySelectorAll('.hero-switch button').forEach(other => {
+        const on = other === btn;
+        other.classList.toggle('is-on', on);
+        other.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      heroKicker.textContent = offer.kicker;
+      heroLead.textContent = offer.lead;
+      heroPrimary.href = offer.href;
+      heroPrimary.textContent = offer.label;
+    });
+  });
   document.querySelectorAll('.card, .service-item, .case-card, .testi-card, .product-card, .process-step').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';

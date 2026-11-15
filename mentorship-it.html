@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Youth and IT mentorship | CodeCraft Ghana</title>
+  <meta name="description" content="An AI course in Accra for youth and people in IT, up to six weeks. In person GH₵500 a week, four seats. Online GH₵1,000 once.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://codecraftgh.com/mentorship-it.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Code<span>Craft</span> Technologies</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="services.html">Services <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu submenu-wide">
+        <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="enterprise.html">Enterprise<small>From GH₵25,000</small></a></li>
+        <li><a href="services.html#software">Custom software<small>From GH₵5,200</small></a></li>
+        <li><a href="services.html#ai">AI<small>Quoted from the brief</small></a></li>
+        <li><a href="calculator.html">Price calculator<small>Build a starting figure</small></a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="mentorship.html" class="active">Mentorship <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="mentorship-students.html">Students</a></li>
+        <li><a href="mentorship-it.html">Youth and IT</a></li>
+        <li><a href="mentorship-business.html">Business owners</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="resources.html">Resources <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="resources.html?tab=faq">FAQs</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-header media" style="--header-image:url('assets/images/studio-collab.jpg')">
+  <span class="section-label">Youth and IT</span>
+  <h1>Use AI on real client work.</h1>
+  <p>A course for youth and people already in IT, up to six weeks. You use AI to scope, build, and check a job, and you leave with work you can show.</p>
+</div>
+
+<section style="padding-top:0">
+  <div class="mentor-facts">
+    <div class="mentor-fact"><span>Who</span><strong>Youth and IT</strong></div>
+    <div class="mentor-fact"><span>Length</span><strong>Up to 6 weeks</strong></div>
+    <div class="mentor-fact"><span>In person</span><strong>GH₵500 / week</strong></div>
+    <div class="mentor-fact"><span>Online</span><strong>GH₵1,000 once</strong></div>
+  </div>
+</section>
+
+<section id="skill">
+  <span class="section-label">AI course · youth and IT</span>
+  <h2 class="section-title">Let AI draft it. You still deliver it.</h2>
+  <p style="color:var(--gray-600);max-width:68ch;margin-top:0.8rem;">This room is for young people and for anyone already in IT. If you are still in school, use the student course. This one runs for up to six weeks. You leave with a scoped piece of work you can show. Prices exclude tax.</p>
+  <div class="mentor-fees">
+    <article class="mentor-fee">
+      <span>In person · 4 seats</span>
+      <strong>GH₵500 / week</strong>
+      <ul>
+        <li>At GM-108 Adam Street, Accra</li>
+        <li>Paid each week, up to six weeks</li>
+        <li>A full six weeks is GH₵3,000</li>
+        <li>Your seat is one of four, held after that week is paid</li>
+        <li id="seatLeft">Checking this week’s seats…</li>
+      </ul>
+    </article>
+    <article class="mentor-fee">
+      <span>Online · unlimited</span>
+      <strong>GH₵1,000</strong>
+      <ul>
+        <li>The same six-week course, taught online</li>
+        <li>One payment for the whole course</li>
+        <li>Seats are not capped</li>
+      </ul>
+    </article>
+  </div>
+  <div class="mentor-path">
+    <h3>The six weeks</h3>
+    <ol>
+      <li>Using AI on a real brief, and checking what it returns</li>
+      <li>Turning a request into a written scope with AI</li>
+      <li>Pricing the job in cedis from published floors</li>
+      <li>A first version built with AI, then corrected</li>
+      <li>What handover includes for the client</li>
+      <li>The piece of work you can show</li>
+    </ol>
+  </div>
+  <div class="mentor-other" style="margin-top:1.2rem">
+    <a class="btn btn-outline btn-sm" href="mentorship-students.html">Student course</a>
+    <a class="btn btn-outline btn-sm" href="mentorship-business.html">Business owners</a>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="mentor-layout">
+    <form class="mentor-form" id="seatForm" data-seat-track="it">
+      <h2>Reserve a seat</h2>
+      <p class="note">Say whether you are a young builder, a freelancer, or already employed in IT, and choose in person or online. A short studio introduction is free if you want to meet us first.</p>
+      <p class="note" id="seatAvailability">Checking this week’s seats…</p>
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone or WhatsApp" required>
+      <input type="text" name="role" placeholder="Your role in IT" required>
+      <select name="offer" required>
+        <option value="" selected disabled>Choose a seat</option>
+        <option>Free introduction</option>
+        <option>In person — GH₵500 per week, 4 seats</option>
+        <option>Online — GH₵1,000 once, unlimited</option>
+      </select>
+      <textarea name="note" rows="4" placeholder="What you want to get clearer on"></textarea>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="track" value="Youth and IT">
+      <button class="btn btn-primary" type="submit">Request a seat</button>
+      <p class="note" id="seatStatus" role="status"></p>
+    </form>
+    <div>
+      <h2 class="section-title">Questions</h2>
+      <div class="faq-list" style="margin-top:1rem">
+        <details open>
+          <summary>Who is this for?</summary>
+          <p>Youth and people in IT who are no longer looking for a student-only session. Students should use the student page.</p>
+        </details>
+        <details>
+          <summary>Will you promise an income figure?</summary>
+          <p>No. We will show how scope, price, and delivery work on real projects. What you earn depends on the work you win after that.</p>
+        </details>
+        <details>
+          <summary>What does it cost?</summary>
+          <p>In person is GH₵500 a week, for up to six weeks, with four seats at GM-108 Adam Street. Online is GH₵1,000 once, with unlimited seats. Prices exclude tax.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 Codecraft Technologies. <a href="mentorship.html">All mentorship sessions</a></span>
+    <span>GM-108 Adam Street, Accra · +233 549 739 010</span>
+  </div>
+</footer>
+<script src="motion.js"></script>
+<script src="js/form-submit.js"></script>
+<script src="js/seats.js"></script>
+<script>
+const seatForm = document.getElementById('seatForm');
+window.prepareSeatForm(seatForm);
+seatForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const status = document.getElementById('seatStatus');
+  const button = seatForm.querySelector('button');
+  const payload = Object.fromEntries(new FormData(seatForm).entries());
+  payload.form_type = 'mentorship';
+  const offer = String(payload.offer || '');
+  button.disabled = true;
+  status.textContent = 'Sending…';
+  try {
+    if (offer.indexOf('In person') === 0) {
+      status.textContent = 'Checking seats…';
+      const held = await window.holdInPersonSeat();
+      payload.period = held.periodLabel;
+      payload.seats_left = held.left + ' of ' + held.capacity;
+    }
+    await window.postFormMail(payload);
+    seatForm.reset();
+    status.textContent = offer.indexOf('In person') === 0
+      ? 'Seat held for the ' + payload.period + '. We will send an invoice. Pay to keep it. ' + payload.seats_left + ' in-person seats remain.'
+      : offer.indexOf('Online') === 0
+        ? 'Request received. We will send an invoice for the one-time online fee. Online seats are not capped.'
+        : offer.indexOf('Waitlist') === 0
+          ? 'You are on the waitlist. We will write when the next week has a seat.'
+          : 'Introduction requested. We will reply with a time.';
+  } catch (err) {
+    status.textContent = err.message;
+  } finally {
+    button.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

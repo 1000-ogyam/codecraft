@@ -1,0 +1,6 @@
+<?php
+
+return [
+    'api_key' => 'YOUR_ARKESEL_API_KEY',
+    'sender' => 'Codecraft',
+];

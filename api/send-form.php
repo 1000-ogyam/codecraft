@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 require_once dirname(__DIR__) . '/config/mail.php';
+require_once dirname(__DIR__) . '/config/bookings.php';
 
 $raw = file_get_contents('php://input');
 $data = json_decode($raw ?: '', true);
@@ -33,6 +34,13 @@ if (!empty($data['website'])) {
 
 try {
     sendFormEmail($data);
+    if (($data['form_type'] ?? '') === 'mentorship') {
+        try {
+            recordBookedSeat($data);
+        } catch (Throwable $bookingError) {
+            error_log('booking record: ' . $bookingError->getMessage());
+        }
+    }
     echo json_encode(['ok' => true]);
 } catch (InvalidArgumentException $e) {
     http_response_code(400);

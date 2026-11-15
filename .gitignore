@@ -1,2 +1,7 @@
 /vendor/
 /config/mail.local.php
+/config/paystack.local.php
+/config/db.local.php
+/config/sms.local.php
+/config/admin.local.php
+/data/seats.json

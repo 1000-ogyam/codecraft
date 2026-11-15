@@ -360,6 +360,7 @@
       <a href="services.html">Services <span class="caret" aria-hidden="true"></span></a>
       <ul class="submenu submenu-wide">
         <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="enterprise.html">Enterprise<small>From GH₵25,000</small></a></li>
         <li><a href="services.html#software">Custom software<small>From GH₵5,200</small></a></li>
         <li><a href="services.html#ai">AI<small>Quoted from the brief</small></a></li>
         <li><a href="services.html#automation">Automation<small>From GH₵1,000</small></a></li>
@@ -425,9 +426,18 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </li>
+        <li class="has-sub">
+      <a href="mentorship.html">Mentorship <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="mentorship-students.html">Students</a></li>
+        <li><a href="mentorship-it.html">Youth and IT</a></li>
+        <li><a href="mentorship-business.html">Business owners</a></li>
+      </ul>
+    </li>
     <li class="has-sub">
       <a href="resources.html" class="active">Resources <span class="caret" aria-hidden="true"></span></a>
       <ul class="submenu">
+        <li><a href="blog/">Blog</a></li>
         <li><a href="resources.html?tab=faq">FAQs</a></li>
         <li><a href="resources.html?tab=booking">Book a call</a></li>
         <li><a href="resources.html?tab=payment">Pay an invoice</a></li>
@@ -443,7 +453,7 @@
 <div class="page-header">
   <span class="section-label">Resources</span>
   <h1>Everything You<br>Need, Right Here</h1>
-  <p>Pay for services, book a free consultation, find answers, and read our policies — all in one place.</p>
+  <p>Pay for services, book a free consultation, find answers, and read our policies. The <a href="blog/" style="color:#fff;font-weight:600;">blog</a> answers the questions Ghanaian businesses search before they ask for a quote.</p>
 </div>
 
 <!-- TABS -->
@@ -1426,7 +1436,7 @@
     }
   }
 
-  function initiatePayment() {
+  async function initiatePayment() {
     const name   = document.getElementById('payName').value.trim();
     const email  = document.getElementById('payEmail').value.trim();
     const ref    = document.getElementById('payRef').value.trim();
@@ -1437,18 +1447,16 @@
       return;
     }
 
-    // ── PAYSTACK INTEGRATION ────────────────────────────────────────────────
-    // 1. Create a free Paystack account at https://paystack.com
-    // 2. Go to Settings → API Keys & Webhooks
-    // 3. Copy your PUBLIC key (starts with pk_live_ or pk_test_)
-    // 4. Replace YOUR_PAYSTACK_PUBLIC_KEY below
-    // ────────────────────────────────────────────────────────────────────────
-    const PAYSTACK_PUBLIC_KEY = 'pk_test_YOUR_PAYSTACK_PUBLIC_KEY'; // 👈 replace this
-
     const phone = document.getElementById('payPhone').value.trim();
+    const keyRes = await fetch(new URL('api/paystack-config.php', window.location.href).href);
+    const keyData = await keyRes.json().catch(() => ({}));
+    if (!keyRes.ok || !keyData.publicKey) {
+      alert(keyData.error || 'Online payment is not configured yet. Email hello@codecraftgh.com.');
+      return;
+    }
 
     const handler = PaystackPop.setup({
-      key: PAYSTACK_PUBLIC_KEY,
+      key: keyData.publicKey,
       email: email,
       amount: Math.round(amount * 100), // Paystack uses kobo/pesewas
       currency: 'GHS',

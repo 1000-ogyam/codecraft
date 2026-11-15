@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Copy this file to paystack.local.php and paste the keys from
+ * Paystack → Settings → API Keys & Webhooks.
+ * paystack.local.php is not committed.
+ */
+return [
+    'public_key' => 'pk_test_YOUR_PAYSTACK_PUBLIC_KEY',
+    'secret_key' => 'sk_test_YOUR_PAYSTACK_SECRET_KEY',
+];

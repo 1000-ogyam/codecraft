@@ -111,6 +111,8 @@ function subjectForFormType(string $formType, array $data): string
         'consultation_booking'   => 'Consultation booking' . ($name !== '' ? " — {$name}" : ''),
         'partnership_application'=> 'Partnership application' . ($name !== '' ? " — {$name}" : ''),
         'contract_request'       => 'Contract request' . ($name !== '' ? " — {$name}" : ''),
+        'mentorship'             => 'Mentorship seat' . ($name !== '' ? " — {$name}" : ''),
+        'enterprise'             => 'Enterprise proposal' . ($name !== '' ? " — {$name}" : ''),
         default                  => 'Website contact' . ($name !== '' ? " — {$name}" : ''),
     };
 }
@@ -125,7 +127,7 @@ function sendFormEmail(array $data): void
     }
 
     $formType = (string) ($data['form_type'] ?? 'contact');
-    $allowed = ['contact', 'consultation_booking', 'partnership_application', 'contract_request'];
+    $allowed = ['contact', 'consultation_booking', 'partnership_application', 'contract_request', 'mentorship', 'enterprise'];
     if (!in_array($formType, $allowed, true)) {
         throw new InvalidArgumentException('Invalid form type.');
     }

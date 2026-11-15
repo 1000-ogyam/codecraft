@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business owner mentorship | CodeCraft Ghana</title>
+  <meta name="description" content="A one-weekend course for business owners on using AI and ProDesk24 to automate the process from production or inventory to the sale. In person GH₵1,500 at the front desk. Online GH₵1,000 with Paystack.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://codecraftgh.com/mentorship-business.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=11">
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Code<span>Craft</span> Technologies</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-sub"><a href="services.html">Services <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu submenu-wide">
+        <li><a href="services.html#websites">Websites and stores<small>From GH₵2,000</small></a></li>
+        <li><a href="enterprise.html">Enterprise<small>From GH₵25,000</small></a></li>
+        <li><a href="services.html#automation">Automation<small>From GH₵1,000</small></a></li>
+        <li><a href="services.html#packages">Packages<small>From GH₵5,250</small></a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="mentorship.html" class="active">Mentorship <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="mentorship-students.html">Students</a></li>
+        <li><a href="mentorship-it.html">Youth and IT</a></li>
+        <li><a href="mentorship-business.html">Business owners</a></li>
+      </ul>
+    </li>
+    <li class="has-sub"><a href="resources.html">Resources <span class="caret" aria-hidden="true"></span></a>
+      <ul class="submenu">
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="resources.html?tab=faq">FAQs</a></li>
+      </ul>
+    </li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-header media" style="--header-image:url('assets/images/founder-tablet.jpg')">
+  <span class="section-label">Business owners</span>
+  <h1>Automate the path from stock to the sale.</h1>
+  <p>One weekend for owners and managers. Use AI and ProDesk24 to automate the process, from production or inventory through to the sale.</p>
+</div>
+
+<section style="padding-top:0">
+  <div class="mentor-facts">
+    <div class="mentor-fact"><span>Who</span><strong>Business owners</strong></div>
+    <div class="mentor-fact"><span>Length</span><strong>One weekend</strong></div>
+    <div class="mentor-fact"><span>In person</span><strong>GH₵1,500</strong></div>
+    <div class="mentor-fact"><span>Online</span><strong>GH₵1,000</strong></div>
+  </div>
+</section>
+
+<section id="skill">
+  <span class="section-label">AI course · owners</span>
+  <h2 class="section-title">AI and a system, across the whole process.</h2>
+  <p style="color:var(--gray-600);max-width:68ch;margin-top:0.8rem;">You follow one item from production or inventory through to the customer and the sale. ProDesk24 is the system that holds those records. AI drafts, summarises, and flags steps along the way. A person still decides. Prices exclude tax.</p>
+  <div class="mentor-fees">
+    <article class="mentor-fee">
+      <span>In person · 4 seats</span>
+      <strong>GH₵1,500</strong>
+      <ul>
+        <li>One weekend at GM-108 Adam Street, Accra</li>
+        <li>Pay at the front desk</li>
+        <li>Four seats. The seat is held after payment</li>
+        <li id="seatLeft">Checking this weekend’s seats…</li>
+      </ul>
+    </article>
+    <article class="mentor-fee">
+      <span>Online · unlimited</span>
+      <strong>GH₵1,000</strong>
+      <ul>
+        <li>The same weekend, taught online</li>
+        <li>Pay once with Paystack: card, mobile money, or bank</li>
+        <li>Seats are not capped</li>
+      </ul>
+    </article>
+  </div>
+  <div class="mentor-path">
+    <h3>The weekend</h3>
+    <ol>
+      <li>Map one process from production or inventory to the sale</li>
+      <li>The records a system should keep: stock in, stock out, the sale, the customer</li>
+      <li>ProDesk24 as the system that holds those records</li>
+      <li>Where AI drafts, summarises, or flags a step, and where a person still decides</li>
+      <li>One repeated task you hand to the system</li>
+      <li>The automated path you can point at, from the item to the sale</li>
+    </ol>
+  </div>
+  <div class="mentor-other" style="margin-top:1.2rem">
+    <a class="btn btn-outline btn-sm" href="mentorship-students.html">Student course</a>
+    <a class="btn btn-outline btn-sm" href="mentorship-it.html">Youth and IT</a>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="mentor-layout">
+    <form class="mentor-form" id="seatForm" data-seat-track="business">
+      <h2>Reserve an owner seat</h2>
+      <p class="note">In person, you pay GH₵1,500 at the front desk. Online, you pay GH₵1,000 with Paystack on this page. A short studio introduction is free if you want to meet us first.</p>
+      <p class="note" id="seatAvailability">Checking this weekend’s seats…</p>
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone or WhatsApp" required>
+      <input type="text" name="business" placeholder="Business name" required>
+      <select name="offer" required>
+        <option value="" selected disabled>Choose a seat</option>
+        <option>Free introduction</option>
+        <option>In person weekend — GH₵1,500, 4 seats</option>
+        <option>Online — GH₵1,000 once, unlimited</option>
+      </select>
+      <textarea name="note" rows="4" placeholder="Production, inventory, or sales — where you want to start"></textarea>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="track" value="Business owners">
+      <button class="btn btn-primary" type="submit" id="seatButton">Request a seat</button>
+      <p class="note" id="seatStatus" role="status"></p>
+    </form>
+    <div>
+      <h2 class="section-title">Questions</h2>
+      <div class="faq-list" style="margin-top:1rem">
+        <details open>
+          <summary>Is this a sales pitch?</summary>
+          <p>No. It is a working session on how to choose and brief digital work. You can ask for a quote afterwards.</p>
+        </details>
+        <details>
+          <summary>Who should come?</summary>
+          <p>The owner or the person who will approve the spend. Staff who build software should use the IT session.</p>
+        </details>
+        <details>
+          <summary>How do I pay?</summary>
+          <p>In person, pay GH₵1,500 at the front desk, GM-108 Adam Street. That room has four seats, held after payment. Online, pay GH₵1,000 once with Paystack. Prices exclude tax.</p>
+        </details>
+        <details>
+          <summary>Is the weekend only about ProDesk24?</summary>
+          <p>The weekend is about automating the process with AI and a system, from production or inventory through to the sale. ProDesk24 is the system you use in the room.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 Codecraft Technologies. <a href="mentorship.html">All mentorship sessions</a></span>
+    <span>GM-108 Adam Street, Accra · +233 549 739 010</span>
+  </div>
+</footer>
+<script src="motion.js"></script>
+<script src="js/form-submit.js"></script>
+<script src="js/seats.js"></script>
+<script>
+const seatForm = document.getElementById('seatForm');
+const seatButton = document.getElementById('seatButton');
+const offerField = seatForm.querySelector('[name="offer"]');
+
+function seatButtonLabel() {
+  const offer = offerField.value || '';
+  if (offer.indexOf('In person') === 0) return 'Reserve — pay GH₵1,500 at the front desk';
+  if (offer.indexOf('Online') === 0) return 'Pay GH₵1,000 with Paystack';
+  if (offer.indexOf('Waitlist') === 0) return 'Join the waitlist';
+  return 'Request a seat';
+}
+offerField.addEventListener('change', () => { seatButton.textContent = seatButtonLabel(); });
+window.prepareSeatForm(seatForm, () => { seatButton.textContent = seatButtonLabel(); });
+
+async function paystackPublicKey() {
+  const res = await fetch(new URL('api/paystack-config.php', window.location.href).href);
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.publicKey) {
+    throw new Error(data.error || 'Online payment is not configured yet. Pay at the front desk, or email hello@codecraftgh.com.');
+  }
+  return data.publicKey;
+}
+
+function openPaystack(payload, publicKey) {
+  const reference = 'CCG-OWN-' + Date.now();
+  return new Promise((resolve, reject) => {
+    if (!window.PaystackPop) {
+      reject(new Error('Paystack could not load. Check your connection and try again.'));
+      return;
+    }
+    const handler = window.PaystackPop.setup({
+      key: publicKey,
+      email: payload.email,
+      amount: 100000,
+      currency: 'GHS',
+      ref: reference,
+      metadata: {
+        custom_fields: [
+          { display_name: 'Name', variable_name: 'name', value: payload.name },
+          { display_name: 'Business', variable_name: 'business', value: payload.business || '' },
+          { display_name: 'Phone', variable_name: 'phone', value: payload.phone || '' },
+          { display_name: 'Course', variable_name: 'course', value: 'Business owners weekend — online' }
+        ]
+      },
+      callback: (response) => resolve(response.reference || reference),
+      onClose: () => reject(new Error('Payment was not completed. Your seat is not held.'))
+    });
+    handler.openIframe();
+  });
+}
+
+async function confirmPaystack(reference) {
+  const res = await fetch(new URL('api/paystack-verify.php', window.location.href).href, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ reference })
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.ok) {
+    throw new Error(data.error || 'Payment was not confirmed.');
+  }
+  return data;
+}
+
+seatForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const status = document.getElementById('seatStatus');
+  const payload = Object.fromEntries(new FormData(seatForm).entries());
+  payload.form_type = 'mentorship';
+  const offer = String(payload.offer || '');
+  seatButton.disabled = true;
+  status.textContent = 'Sending…';
+  try {
+    if (offer.indexOf('Online') === 0) {
+      status.textContent = 'Opening Paystack…';
+      const reference = await openPaystack(payload, await paystackPublicKey());
+      status.textContent = 'Confirming payment…';
+      await confirmPaystack(reference);
+      payload.payment = 'Paystack';
+      payload.payment_reference = reference;
+      payload.amount = 'GH₵1,000';
+      await window.postFormMail(payload);
+      seatForm.reset();
+      seatButton.textContent = seatButtonLabel();
+      status.textContent = 'Payment confirmed. Your online seat is reserved. Reference ' + reference + '.';
+      return;
+    }
+    if (offer.indexOf('In person') === 0) {
+      status.textContent = 'Checking seats…';
+      const held = await window.holdInPersonSeat();
+      payload.payment = 'Front desk';
+      payload.amount = 'GH₵1,500';
+      payload.period = held.periodLabel;
+      payload.seats_left = held.left + ' of ' + held.capacity;
+    }
+    await window.postFormMail(payload);
+    seatForm.reset();
+    seatButton.textContent = seatButtonLabel();
+    status.textContent = offer.indexOf('In person') === 0
+      ? 'Seat held for the ' + payload.period + '. Pay GH₵1,500 at the front desk, GM-108 Adam Street. ' + payload.seats_left + ' in-person seats remain.'
+      : offer.indexOf('Waitlist') === 0
+        ? 'You are on the waitlist. We will write when the next weekend has a seat.'
+        : 'Introduction requested. We will reply with a time.';
+  } catch (err) {
+    status.textContent = err.message;
+  } finally {
+    seatButton.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
