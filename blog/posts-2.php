@@ -279,8 +279,8 @@ return [
         'small-business-website-package-ghana',
         'Websites',
         'Small-business website packages in Ghana',
-        'CodeCraft packages start at GH₵5,250 for a business presence. A starter site on its own is GH₵2,000. Prices exclude tax.',
-        '<p>If you want the site and the first brand and social pieces together, read the packages. They start at GH₵5,250. If you only need the site, the starter is GH₵2,000 and the business website is GH₵4,500. Prices exclude tax.</p>
+        'The Launch package for an SME starting online is GH₵2,500. A starter site on its own is GH₵2,000. Prices exclude tax.',
+        '<p>Launch is GH₵2,500 for a small or medium business starting its online journey. The written quotation states what is included. If you only need the site, the starter is GH₵2,000 and the business website is GH₵4,500. Prices exclude tax.</p>
 <h2>What people mix up</h2>
 <p>A package is a bundle with named parts. It is not “everything digital”. Advertising spend, printing, and a ProDesk24 subscription are outside unless the quotation lists them. ProDesk24 onboarding on its own starts at GH₵1,000. A starter logo added to a website package starts at GH₵500.</p>
 <h2>A practical order</h2>
